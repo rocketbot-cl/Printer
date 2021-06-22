@@ -23,24 +23,6 @@ Para instalar librerias se debe ingresar por terminal a la carpeta "libs"
    sudo pip install <package> -t .
 
 """
-
-
-# def import_lib(relative_path, name, class_name=None):
-#     """
-#     - relative_path: library path from the module's libs folder
-#     - name: library name
-#     - class_name: class name to be imported. As 'from name import class_name'
-#     """
-#     import importlib.util
-#     cur_path = base_path + 'modules' + os.sep + 'Printer' + os.sep + 'libs' + os.sep
-#     spec = importlib.util.spec_from_file_location(name, cur_path + relative_path)
-#     foo = importlib.util.module_from_spec(spec)
-#     spec.loader.exec_module(foo)
-#     if class_name is not None:
-#         return getattr(foo, class_name)
-#     return foo
-
-
 import sys
 import os
 
