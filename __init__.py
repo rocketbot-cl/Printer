@@ -1,0 +1,84 @@
+# coding: utf-8
+"""
+Base para desarrollo de modulos externos.
+Para obtener el modulo/Funcion que se esta llamando:
+     GetParams("module")
+
+Para obtener las variables enviadas desde formulario/comando Rocketbot:
+    var = GetParams(variable)
+    Las "variable" se define en forms del archivo package.json
+
+Para modificar la variable de Rocketbot:
+    SetVar(Variable_Rocketbot, "dato")
+
+Para obtener una variable de Rocketbot:
+    var = GetVar(Variable_Rocketbot)
+
+Para obtener la Opcion seleccionada:
+    opcion = GetParams("option")
+
+
+Para instalar librerias se debe ingresar por terminal a la carpeta "libs"
+    
+   sudo pip install <package> -t .
+
+"""
+
+
+# def import_lib(relative_path, name, class_name=None):
+#     """
+#     - relative_path: library path from the module's libs folder
+#     - name: library name
+#     - class_name: class name to be imported. As 'from name import class_name'
+#     """
+#     import importlib.util
+#     cur_path = base_path + 'modules' + os.sep + 'Printer' + os.sep + 'libs' + os.sep
+#     spec = importlib.util.spec_from_file_location(name, cur_path + relative_path)
+#     foo = importlib.util.module_from_spec(spec)
+#     spec.loader.exec_module(foo)
+#     if class_name is not None:
+#         return getattr(foo, class_name)
+#     return foo
+
+
+import sys
+import os
+
+
+
+base_path = tmp_global_obj["basepath"]
+cur_path = base_path + "modules" + os.sep + "Printer" + os.sep + "libs" + os.sep
+if cur_path not in sys.path:
+    sys.path.append(cur_path)
+
+import win32api
+from win32 import win32print
+
+module = GetParams("module")
+
+
+try:
+
+    if module == "get_printers":
+
+        printers = win32print.EnumPrinters(win32print.PRINTER_ENUM_LOCAL)
+        # Uncomment the 3 lines to see in console the list of printers
+        # printercount = 0
+        Printers = []
+        for printer in printers:
+            # print(printercount, "-", printer[2])
+            Printers.append(printer[2])
+            # printercount += 1
+        SetVar("Printer_fake_var", {
+            "printers" : Printers,
+        })
+    
+    if module == "default_printer":
+        printerWanted = GetParams("iframe")
+        printer = eval(printerWanted)["printer"]
+        win32print.SetDefaultPrinter(printer)
+    
+except Exception as e:
+    print("\x1B[" + "31;40mError\x1B[" + "0m")
+    PrintException()
+    raise e
