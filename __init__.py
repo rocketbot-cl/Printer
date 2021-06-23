@@ -74,36 +74,15 @@ try:
         if (fileType == "doc"):
 
             myprinter = win32print.OpenPrinter(defaultPrinter)
-            printjob = win32print.StartDocPrinter(myprinter, 1, ("Python test RAW print", None, "raw"))
 
             fileToPrint = GetParams("fileToPrint")
-            with open(fileToPrint, mode='rb') as file:
-                buf = file.read()
 
-            win32api.ShellExecute(0, "printto", '"%s"' % fileToPrint, '"%s"' % myprinter, ".", 0)
-            bytesprinted = win32print.WritePrinter(myprinter, buf)
-
-            win32print.EndDocPrinter(myprinter)
-            win32print.ClosePrinter(myprinter)
+            win32api.ShellExecute(0, "print", '"%s"' % fileToPrint, '"%s"' % myprinter, ".", 0)
 
         elif (fileType == "txt"):
             fileToPrint = GetParams("fileToPrint")
             win32api.ShellExecute(0, "print", fileToPrint, None, ".", 0)
         
-        # elif (fileType == "pdf"):
-
-        #     myprinter = win32print.OpenPrinter(printer)
-        #     # printjob = win32print.StartDocPrinter(myprinter, 1, ("Python test RAW print", None, "raw"))
-
-        #     fileToPrint = GetParams("fileToPrint")
-        #     with open(fileToPrint, mode='rb') as file:
-        #         buf = file.read()
-
-        #     win32api.ShellExecute(0, "printto", '"%s"' % fileToPrint, '"%s"' % myprinter, ".", 0)
-        #     bytesprinted = win32print.WritePrinter(myprinter, buf)
-
-        #     win32print.EndDocPrinter(myprinter)
-        #     win32print.ClosePrinter(myprinter)
 
     if module == "folder_to_print":
 
@@ -118,16 +97,8 @@ try:
             if (fileType == "doc"):
 
                 myprinter = win32print.OpenPrinter(defaultPrinter)
-                printjob = win32print.StartDocPrinter(myprinter, 1, ("Python test RAW print", None, "raw"))
 
-                with open(fileToPrint, mode='rb') as file:
-                    buf = file.read()
-
-                win32api.ShellExecute(0, "printto", '"%s"' % fileToPrint, '"%s"' % myprinter, ".", 0)
-                bytesprinted = win32print.WritePrinter(myprinter, buf)
-
-                win32print.EndDocPrinter(myprinter)
-                win32print.ClosePrinter(myprinter)
+                win32api.ShellExecute(0, "print", '"%s"' % fileToPrint, '"%s"' % myprinter, ".", 0)
 
             elif (fileType == "txt"):
 
