@@ -88,7 +88,34 @@
                             "en": "Path to file"
                         },
                         "id": "fileToPrint",
-                        "css": "col-md-12"
+                        "css": "col-md-8"
+                    },
+                    {
+                        "type": "select",
+                        "title": {
+                          "es": "Tipo de archivo:",
+                          "en": "File's type:"
+                        },
+                        "options": [
+                          {
+                            "title": "--Seleccione--",
+                            "value": ""
+                          },
+                          {
+                            "title": "text",
+                            "value": "txt"
+                          },
+                          {
+                            "title": "doc",
+                            "value": "doc"
+                          }
+                        ],
+                        "help": {
+                            "es": "Tipo de archivo",
+                            "en":  "File's type"
+                        },
+                        "id": "fileType",
+                        "css": "col-md-4"
                     }
                 ]
             },
@@ -134,6 +161,33 @@
                         },
                         "id": "folderToPrint",
                         "css": "col-md-12"
+                    },
+                    {
+                        "type": "select",
+                        "title": {
+                          "es": "Tipo de archivo:",
+                          "en": "File's type:"
+                        },
+                        "options": [
+                          {
+                            "title": "--Seleccione--",
+                            "value": ""
+                          },
+                          {
+                            "title": "text",
+                            "value": "txt"
+                          },
+                          {
+                            "title": "doc",
+                            "value": "doc"
+                          }
+                        ],
+                        "help": {
+                            "es": "Tipo de archivo",
+                            "en":  "File's type"
+                        },
+                        "id": "fileType",
+                        "css": "col-md-4"
                     }
                 ]
             },

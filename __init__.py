@@ -25,14 +25,21 @@ Para instalar librerias se debe ingresar por terminal a la carpeta "libs"
 """
 import sys
 import os
+from pathlib import Path
 
 base_path = tmp_global_obj["basepath"]
 cur_path = base_path + "modules" + os.sep + "Printer" + os.sep + "libs" + os.sep
 if cur_path not in sys.path:
     sys.path.append(cur_path)
 
-import win32api
-from win32 import win32print
+try:
+
+    from win32 import win32api
+
+    from win32 import win32print
+except Exception as e:
+    PrintException()
+    raise e
 
 module = GetParams("module")
 
@@ -56,21 +63,75 @@ try:
 
         printerWanted = GetParams("iframe")
         printer = eval(printerWanted)["printer"]
+
         win32print.SetDefaultPrinter(printer)
 
     if module == "print_file":
 
+        fileType = GetParams("fileType")
         defaultPrinter = win32print.GetDefaultPrinter()
-        fileToPrint = GetParams("fileToPrint")
-        win32api.ShellExecute(0, "print", fileToPrint, None, ".", 0)
+        
+        if (fileType == "doc"):
+
+            myprinter = win32print.OpenPrinter(defaultPrinter)
+            printjob = win32print.StartDocPrinter(myprinter, 1, ("Python test RAW print", None, "raw"))
+
+            fileToPrint = GetParams("fileToPrint")
+            with open(fileToPrint, mode='rb') as file:
+                buf = file.read()
+
+            win32api.ShellExecute(0, "printto", '"%s"' % fileToPrint, '"%s"' % myprinter, ".", 0)
+            bytesprinted = win32print.WritePrinter(myprinter, buf)
+
+            win32print.EndDocPrinter(myprinter)
+            win32print.ClosePrinter(myprinter)
+
+        elif (fileType == "txt"):
+            fileToPrint = GetParams("fileToPrint")
+            win32api.ShellExecute(0, "print", fileToPrint, None, ".", 0)
+        
+        # elif (fileType == "pdf"):
+
+        #     myprinter = win32print.OpenPrinter(printer)
+        #     # printjob = win32print.StartDocPrinter(myprinter, 1, ("Python test RAW print", None, "raw"))
+
+        #     fileToPrint = GetParams("fileToPrint")
+        #     with open(fileToPrint, mode='rb') as file:
+        #         buf = file.read()
+
+        #     win32api.ShellExecute(0, "printto", '"%s"' % fileToPrint, '"%s"' % myprinter, ".", 0)
+        #     bytesprinted = win32print.WritePrinter(myprinter, buf)
+
+        #     win32print.EndDocPrinter(myprinter)
+        #     win32print.ClosePrinter(myprinter)
 
     if module == "folder_to_print":
 
         from glob import glob
+
+        fileType = GetParams("fileType")
+
         defaultPrinter = win32print.GetDefaultPrinter()
         folderToPrint = GetParams("folderToPrint") + "/**/*"
-        for f in glob(folderToPrint, recursive=True):
-            win32api.ShellExecute(0, "print", f, None, ".", 0)
+        for fileToPrint in glob(folderToPrint, recursive=True):
+
+            if (fileType == "doc"):
+
+                myprinter = win32print.OpenPrinter(defaultPrinter)
+                printjob = win32print.StartDocPrinter(myprinter, 1, ("Python test RAW print", None, "raw"))
+
+                with open(fileToPrint, mode='rb') as file:
+                    buf = file.read()
+
+                win32api.ShellExecute(0, "printto", '"%s"' % fileToPrint, '"%s"' % myprinter, ".", 0)
+                bytesprinted = win32print.WritePrinter(myprinter, buf)
+
+                win32print.EndDocPrinter(myprinter)
+                win32print.ClosePrinter(myprinter)
+
+            elif (fileType == "txt"):
+
+                win32api.ShellExecute(0, "print", fileToPrint, defaultPrinter, ".", 0)
 
 except Exception as e:
     print("\x1B[" + "31;40mError\x1B[" + "0m")
