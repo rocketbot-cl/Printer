@@ -59,6 +59,96 @@
             "windows": true,
             "mac": false,
             "docker": false
+        },
+        {
+            "en": {
+                "title": "Print file",
+                "description": "Selects the default printer"
+            },
+            "es": {
+                "title": "Imprimir archivo",
+                "description": "Selecciona la impresora por defecto"
+            },
+            "form": {
+                "css": "modal-lg",
+                "style": "width:1000px;",
+                "inputs": [
+                    {
+                        "type": "file_select",
+                        "placeholder": {
+                            "es": "Ruta a archivo",
+                            "en": "Path to file"
+                        },
+                        "title": {
+                            "es": "Seleccionar un archivo:",
+                            "en": "Select a file:"
+                        },
+                        "help": {
+                            "es": "Ruta donde está el archivo",
+                            "en": "Path to file"
+                        },
+                        "id": "fileToPrint",
+                        "css": "col-md-6"
+                    }
+                ]
+            },
+            "video_youtube": "",
+            "icon": " data:image/svg+xml;base64,PHN2ZyBpZD0iX3gzMV9fcHgiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iNTEyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Im0yMS41IDE4aC0zYy0uMjc2IDAtLjUtLjIyNC0uNS0uNXMuMjI0LS41LjUtLjVoM2MuODI3IDAgMS41LS42NzMgMS41LTEuNXYtN2MwLS44MjctLjY3My0xLjUtMS41LTEuNWgtMTljLS44MjcgMC0xLjUuNjczLTEuNSAxLjV2N2MwIC44MjcuNjczIDEuNSAxLjUgMS41aDNjLjI3NiAwIC41LjIyNC41LjVzLS4yMjQuNS0uNS41aC0zYy0xLjM3OSAwLTIuNS0xLjEyMi0yLjUtMi41di03YzAtMS4zNzggMS4xMjEtMi41IDIuNS0yLjVoMTljMS4zNzkgMCAyLjUgMS4xMjIgMi41IDIuNXY3YzAgMS4zNzgtMS4xMjEgMi41LTIuNSAyLjV6Ii8+PHBhdGggZD0ibTE0LjUgMjFoLTZjLS4yNzYgMC0uNS0uMjI0LS41LS41cy4yMjQtLjUuNS0uNWg2Yy4yNzYgMCAuNS4yMjQuNS41cy0uMjI0LjUtLjUuNXoiLz48cGF0aCBkPSJtMTQuNSAxOWgtNmMtLjI3NiAwLS41LS4yMjQtLjUtLjVzLjIyNC0uNS41LS41aDZjLjI3NiAwIC41LjIyNC41LjVzLS4yMjQuNS0uNS41eiIvPjxwYXRoIGQ9Im0xMC41IDE3aC0yYy0uMjc2IDAtLjUtLjIyNC0uNS0uNXMuMjI0LS41LjUtLjVoMmMuMjc2IDAgLjUuMjI0LjUuNXMtLjIyNC41LS41LjV6Ii8+PHBhdGggZD0ibTE4LjUgN2MtLjI3NiAwLS41LS4yMjQtLjUtLjV2LTRjMC0uODI3LS42NzMtMS41LTEuNS0xLjVoLTljLS44MjcgMC0xLjUuNjczLTEuNSAxLjV2NGMwIC4yNzYtLjIyNC41LS41LjVzLS41LS4yMjQtLjUtLjV2LTRjMC0xLjM3OCAxLjEyMS0yLjUgMi41LTIuNWg5YzEuMzc5IDAgMi41IDEuMTIyIDIuNSAyLjV2NGMwIC4yNzYtLjIyNC41LS41LjV6Ii8+PHBhdGggZD0ibTE2LjUgMjRoLTljLTEuMzc5IDAtMi41LTEuMTIyLTIuNS0yLjV2LThjMC0uMjc2LjIyNC0uNS41LS41aDEzYy4yNzYgMCAuNS4yMjQuNS41djhjMCAxLjM3OC0xLjEyMSAyLjUtMi41IDIuNXptLTEwLjUtMTB2Ny41YzAgLjgyNy42NzMgMS41IDEuNSAxLjVoOWMuODI3IDAgMS41LS42NzMgMS41LTEuNXYtNy41eiIvPjwvc3ZnPg==",
+            "module": "print_file",
+            "module_name": "Printer",
+            "visible": true,
+            "options": false,
+            "father": "module",
+            "group": "scripts",
+            "linux": false,
+            "windows": true,
+            "mac": false,
+            "docker": false
+        },
+        {
+            "en": {
+                "title": "Print files in folder",
+                "description": "Selects the default printer"
+            },
+            "es": {
+                "title": "Imprimir archivos de una carpeta",
+                "description": "Selecciona la impresora por defecto"
+            },
+            "form": {
+                "css": "modal-lg",
+                "style": "width:1000px;",
+                "inputs": [
+                    {
+                        "type": "folder_select",
+                        "placeholder": {
+                            "es": "Ruta a Carpeta",
+                            "en": "Path to folder"                        
+                        },
+                        "title": {
+                            "es": "Seleccionar una carpeta:",
+                            "en": "Select a Folder:"
+                        },
+                        "help": {
+                            "es": "Ruta a la carpeta",
+                            "en": "Path to folder"
+                        },
+                        "id": "folderToPrint",
+                        "css": "col-md-6"
+                    }
+                ]
+            },
+            "video_youtube": "",
+            "icon": " data:image/svg+xml;base64,PHN2ZyBpZD0iX3gzMV9fcHgiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iNTEyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Im0yMS41IDE4aC0zYy0uMjc2IDAtLjUtLjIyNC0uNS0uNXMuMjI0LS41LjUtLjVoM2MuODI3IDAgMS41LS42NzMgMS41LTEuNXYtN2MwLS44MjctLjY3My0xLjUtMS41LTEuNWgtMTljLS44MjcgMC0xLjUuNjczLTEuNSAxLjV2N2MwIC44MjcuNjczIDEuNSAxLjUgMS41aDNjLjI3NiAwIC41LjIyNC41LjVzLS4yMjQuNS0uNS41aC0zYy0xLjM3OSAwLTIuNS0xLjEyMi0yLjUtMi41di03YzAtMS4zNzggMS4xMjEtMi41IDIuNS0yLjVoMTljMS4zNzkgMCAyLjUgMS4xMjIgMi41IDIuNXY3YzAgMS4zNzgtMS4xMjEgMi41LTIuNSAyLjV6Ii8+PHBhdGggZD0ibTE0LjUgMjFoLTZjLS4yNzYgMC0uNS0uMjI0LS41LS41cy4yMjQtLjUuNS0uNWg2Yy4yNzYgMCAuNS4yMjQuNS41cy0uMjI0LjUtLjUuNXoiLz48cGF0aCBkPSJtMTQuNSAxOWgtNmMtLjI3NiAwLS41LS4yMjQtLjUtLjVzLjIyNC0uNS41LS41aDZjLjI3NiAwIC41LjIyNC41LjVzLS4yMjQuNS0uNS41eiIvPjxwYXRoIGQ9Im0xMC41IDE3aC0yYy0uMjc2IDAtLjUtLjIyNC0uNS0uNXMuMjI0LS41LjUtLjVoMmMuMjc2IDAgLjUuMjI0LjUuNXMtLjIyNC41LS41LjV6Ii8+PHBhdGggZD0ibTE4LjUgN2MtLjI3NiAwLS41LS4yMjQtLjUtLjV2LTRjMC0uODI3LS42NzMtMS41LTEuNS0xLjVoLTljLS44MjcgMC0xLjUuNjczLTEuNSAxLjV2NGMwIC4yNzYtLjIyNC41LS41LjVzLS41LS4yMjQtLjUtLjV2LTRjMC0xLjM3OCAxLjEyMS0yLjUgMi41LTIuNWg5YzEuMzc5IDAgMi41IDEuMTIyIDIuNSAyLjV2NGMwIC4yNzYtLjIyNC41LS41LjV6Ii8+PHBhdGggZD0ibTE2LjUgMjRoLTljLTEuMzc5IDAtMi41LTEuMTIyLTIuNS0yLjV2LThjMC0uMjc2LjIyNC0uNS41LS41aDEzYy4yNzYgMCAuNS4yMjQuNS41djhjMCAxLjM3OC0xLjEyMSAyLjUtMi41IDIuNXptLTEwLjUtMTB2Ny41YzAgLjgyNy42NzMgMS41IDEuNSAxLjVoOWMuODI3IDAgMS41LS42NzMgMS41LTEuNXYtNy41eiIvPjwvc3ZnPg==",
+            "module": "folder_to_print",
+            "module_name": "Printer",
+            "visible": true,
+            "options": false,
+            "father": "module",
+            "group": "scripts",
+            "linux": false,
+            "windows": true,
+            "mac": false,
+            "docker": false
         }
     ]
 }

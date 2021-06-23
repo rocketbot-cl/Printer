@@ -56,9 +56,25 @@ try:
         })
     
     if module == "default_printer":
+
         printerWanted = GetParams("iframe")
         printer = eval(printerWanted)["printer"]
         win32print.SetDefaultPrinter(printer)
+
+    if module == "print_file":
+
+        defaultPrinter = win32print.GetDefaultPrinter()
+        fileToPrint = GetParams("fileToPrint")
+        win32api.ShellExecute(0, "print", fileToPrint, None, ".", 0)
+
+    if module == "folder_to_print":
+
+        from glob import glob
+        defaultPrinter = win32print.GetDefaultPrinter()
+        folderToPrint = GetParams("folderToPrint") + "/**/*"
+        for f in glob(folderToPrint, recursive=True):
+            win32api.ShellExecute(0, "print", f, None, ".", 0)
+
     
 except Exception as e:
     print("\x1B[" + "31;40mError\x1B[" + "0m")
