@@ -63,11 +63,11 @@
         {
             "en": {
                 "title": "Print file",
-                "description": "Selects the default printer"
+                "description": "Prints a file"
             },
             "es": {
                 "title": "Imprimir archivo",
-                "description": "Selecciona la impresora por defecto"
+                "description": "Imprime un archivo"
             },
             "form": {
                 "css": "modal-lg",
@@ -88,7 +88,7 @@
                             "en": "Path to file"
                         },
                         "id": "fileToPrint",
-                        "css": "col-md-6"
+                        "css": "col-md-12"
                     }
                 ]
             },
@@ -108,11 +108,11 @@
         {
             "en": {
                 "title": "Print files in folder",
-                "description": "Selects the default printer"
+                "description": "Prints files from a folder"
             },
             "es": {
                 "title": "Imprimir archivos de una carpeta",
-                "description": "Selecciona la impresora por defecto"
+                "description": "Imprime archivos que estan en una carpeta"
             },
             "form": {
                 "css": "modal-lg",
@@ -133,7 +133,7 @@
                             "en": "Path to folder"
                         },
                         "id": "folderToPrint",
-                        "css": "col-md-6"
+                        "css": "col-md-12"
                     }
                 ]
             },
