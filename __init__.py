@@ -47,7 +47,9 @@ try:
 
     if module == "get_printers":
 
-        printers = win32print.EnumPrinters(win32print.PRINTER_ENUM_LOCAL)
+        printerLocal = win32print.EnumPrinters(win32print.PRINTER_ENUM_LOCAL)
+        printerConnected = win32print.EnumPrinters(win32print.PRINTER_ENUM_CONNECTIONS)
+        printers = printerLocal + printerConnected
         # Uncomment the 3 lines to see in console the list of printers
         # printercount = 0
         Printers = []
@@ -55,6 +57,7 @@ try:
             # print(printercount, "-", printer[2])
             Printers.append(printer[2])
             # printercount += 1
+        
         SetVar("Printer_fake_var", {
             "printers" : Printers,
         })
