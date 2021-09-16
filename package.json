@@ -44,6 +44,16 @@
                     "id": "html",
                     "css": "col-md-12",
                     "style": "height:100px;"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": "HP-XS211",
+                        "title": {
+                          "en": "Variable with printer wanted:",
+                          "es": "Variable con la impresora deseada:"
+                        },
+                        "id": "printerWanted",
+                        "css": "col-md-6"
                     }
                 ]
             },

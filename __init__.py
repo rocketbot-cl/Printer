@@ -63,9 +63,11 @@ try:
         })
     
     if module == "default_printer":
-
         printerWanted = GetParams("iframe")
         printer = eval(printerWanted)["printer"]
+        
+        if printer == "Seleccionar por variable":
+            printer = GetParams("printerWanted")
 
         win32print.SetDefaultPrinter(printer)
 

@@ -15,6 +15,9 @@ function addOptions(printers) {
 
 data = getDataFromRB({module_name:"Printer", command_name:"get_printers"})
 .then(data => {
+    console.log(data["printers"])
+    data["printers"].unshift("Seleccionar por variable")
+    data["printers"].unshift("---- Select an option ----")
     printers = data["printers"]
     addOptions(printers)
 })
