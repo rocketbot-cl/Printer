@@ -69,6 +69,9 @@ try:
         if printer == "Seleccionar por variable":
             printer = GetParams("printerWanted")
 
+            if "/" in printer:
+                printer = printer.replace("/", "\\")
+
         win32print.SetDefaultPrinter(printer)
 
     if module == "print_file":
@@ -81,6 +84,8 @@ try:
             myprinter = win32print.OpenPrinter(defaultPrinter)
 
             fileToPrint = GetParams("fileToPrint")
+            if "/" in fileToPrint:
+                fileToPrint = fileToPrint.replace("/", "\\")
 
             win32api.ShellExecute(0, "print", '"%s"' % fileToPrint, '"%s"' % myprinter, ".", 0)
 
