@@ -213,6 +213,52 @@
             "windows": true,
             "mac": false,
             "docker": false
+        },
+        {
+            "en": {
+                "title": "Get Printers",
+                "description": "Get all printer installed in the system"
+            },
+            "es": {
+                "title": "Obtener impresoras",
+                "description": "Obtiene todas las impresoras instaladas en el sistema"
+            },
+            "form": {
+                "css": "modal-lg",
+                "style": "width:1000px;",
+                "inputs": [
+                    
+                    {
+                        "type": "input",
+                        "placeholder":"Variable",
+                        "title": {
+                            "es": "Asignar a variable:",
+                            "en": "Assign to var:",
+                            "pr": "Assign to var:"
+                        },
+                         "help": {
+                            "es": "Nombre de variable sin {}",
+                            "en": "Var name whitout {}",
+                            "pr": "Var name whitout {}"
+                        },
+                        "remove_vars": true,
+                        "id": "result",
+                        "css": "col-md-4"
+                    }
+                ]
+            },
+            "video_youtube": "",
+            "icon": " data:image/svg+xml;base64,PHN2ZyBpZD0iX3gzMV9fcHgiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iNTEyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Im0yMS41IDE4aC0zYy0uMjc2IDAtLjUtLjIyNC0uNS0uNXMuMjI0LS41LjUtLjVoM2MuODI3IDAgMS41LS42NzMgMS41LTEuNXYtN2MwLS44MjctLjY3My0xLjUtMS41LTEuNWgtMTljLS44MjcgMC0xLjUuNjczLTEuNSAxLjV2N2MwIC44MjcuNjczIDEuNSAxLjUgMS41aDNjLjI3NiAwIC41LjIyNC41LjVzLS4yMjQuNS0uNS41aC0zYy0xLjM3OSAwLTIuNS0xLjEyMi0yLjUtMi41di03YzAtMS4zNzggMS4xMjEtMi41IDIuNS0yLjVoMTljMS4zNzkgMCAyLjUgMS4xMjIgMi41IDIuNXY3YzAgMS4zNzgtMS4xMjEgMi41LTIuNSAyLjV6Ii8+PHBhdGggZD0ibTE0LjUgMjFoLTZjLS4yNzYgMC0uNS0uMjI0LS41LS41cy4yMjQtLjUuNS0uNWg2Yy4yNzYgMCAuNS4yMjQuNS41cy0uMjI0LjUtLjUuNXoiLz48cGF0aCBkPSJtMTQuNSAxOWgtNmMtLjI3NiAwLS41LS4yMjQtLjUtLjVzLjIyNC0uNS41LS41aDZjLjI3NiAwIC41LjIyNC41LjVzLS4yMjQuNS0uNS41eiIvPjxwYXRoIGQ9Im0xMC41IDE3aC0yYy0uMjc2IDAtLjUtLjIyNC0uNS0uNXMuMjI0LS41LjUtLjVoMmMuMjc2IDAgLjUuMjI0LjUuNXMtLjIyNC41LS41LjV6Ii8+PHBhdGggZD0ibTE4LjUgN2MtLjI3NiAwLS41LS4yMjQtLjUtLjV2LTRjMC0uODI3LS42NzMtMS41LTEuNS0xLjVoLTljLS44MjcgMC0xLjUuNjczLTEuNSAxLjV2NGMwIC4yNzYtLjIyNC41LS41LjVzLS41LS4yMjQtLjUtLjV2LTRjMC0xLjM3OCAxLjEyMS0yLjUgMi41LTIuNWg5YzEuMzc5IDAgMi41IDEuMTIyIDIuNSAyLjV2NGMwIC4yNzYtLjIyNC41LS41LjV6Ii8+PHBhdGggZD0ibTE2LjUgMjRoLTljLTEuMzc5IDAtMi41LTEuMTIyLTIuNS0yLjV2LThjMC0uMjc2LjIyNC0uNS41LS41aDEzYy4yNzYgMCAuNS4yMjQuNS41djhjMCAxLjM3OC0xLjEyMSAyLjUtMi41IDIuNXptLTEwLjUtMTB2Ny41YzAgLjgyNy42NzMgMS41IDEuNSAxLjVoOWMuODI3IDAgMS41LS42NzMgMS41LTEuNXYtNy41eiIvPjwvc3ZnPg==",
+            "module": "get_printers",
+            "module_name": "Printer",
+            "visible": true,
+            "options": false,
+            "father": "module",
+            "group": "scripts",
+            "linux": false,
+            "windows": true,
+            "mac": false,
+            "docker": false
         }
     ]
 }

@@ -47,6 +47,9 @@ try:
 
     if module == "get_printers":
 
+        result = GetParams("result")
+
+
         printerLocal = win32print.EnumPrinters(win32print.PRINTER_ENUM_LOCAL)
         printerConnected = win32print.EnumPrinters(win32print.PRINTER_ENUM_CONNECTIONS)
         printers = printerLocal + printerConnected
@@ -61,6 +64,9 @@ try:
         SetVar("Printer_fake_var", {
             "printers" : Printers,
         })
+
+        if result:
+            SetVar(result, Printers)
     
     if module == "default_printer":
         printerWanted = GetParams("iframe")
