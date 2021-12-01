@@ -137,6 +137,10 @@
                             "es": "Tipo de archivo",
                             "en":  "File's type"
                         },
+                        "placeholder": {
+                            "es": "txt: archivoAImprimir.txt - doc: archivo.docx, archivo.pdf",
+                            "en": "txt: fileToPrint.txt - doc: file.docx, file.pdf"
+                        },
                         "description":{
                             "es": "Tipo de archivo que se desea imprimir.",
                             "en": "File type you want to print."
@@ -216,6 +220,10 @@
                         "help": {
                             "es": "Tipo de archivo",
                             "en":  "File's type"
+                        },
+                        "placeholder": {
+                            "es": "txt: archivoAImprimir.txt - doc: archivo.docx, archivo.pdf",
+                            "en": "txt: fileToPrint.txt - doc: file.docx, file.pdf"
                         },
                         "description":{
                             "es": "Tipo de archivo que se desea imprimir.",
