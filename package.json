@@ -2,7 +2,7 @@
     "author": "Caleb Cipra",
     "description":"Módulo para impresoras." ,
     "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-    "version": "1.2",
+    "version": "1.3.0",
     "license": "MIT",
     "homepage": "http://rocketbot.co/",
     "name": "Printer",
@@ -35,15 +35,20 @@
                 "style": "width:1000px;",
                 "inputs": [
                     {
-                    "type": "html",
-                    "title": {
-                        "es": "Seleccione la impresora",
-                        "en": "Select printer"
-                    },
-                    "src": "index.html",
-                    "id": "html",
-                    "css": "col-md-12",
-                    "style": "height:100px;"
+                        "type": "html",
+                        "title": {
+                            "es": "Seleccione la impresora",
+                            "en": "Select printer"
+                        },
+                        "src": "index.html",
+                        "id": "html",
+                        "css": "col-md-12",
+                        "style": "height:100px;",
+                        "description":{
+                            "es": "Seleccionador para la impresora por defecto que se desea.",
+                            "en": "Select the default printer you want."
+                        }
+                        
                     },
                     {
                         "type": "input",
@@ -51,6 +56,10 @@
                         "title": {
                           "en": "Variable with printer wanted:",
                           "es": "Variable con la impresora deseada:"
+                        },
+                        "description":{
+                            "es": "Usar esta entrada si se seleccionó Seleccionar por impresora en el selector anterior.",
+                            "en": "Use this input if you choosed select default printer in the top selector."
                         },
                         "id": "printerWanted",
                         "css": "col-md-6"
@@ -86,8 +95,8 @@
                     {
                         "type": "file_select",
                         "placeholder": {
-                            "es": "Ruta a archivo",
-                            "en": "Path to file"
+                            "es": "C:/Users/User/Documents/file.pdf",
+                            "en": "C:/Users/User/Documents/file.pdf"
                         },
                         "title": {
                             "es": "Seleccionar un archivo:",
@@ -96,6 +105,10 @@
                         "help": {
                             "es": "Ruta donde está el archivo",
                             "en": "Path to file"
+                        },
+                        "description":{
+                            "es": "Seleccione el archivo que se desea imprimir.",
+                            "en": "Select the file you want to print."
                         },
                         "id": "fileToPrint",
                         "css": "col-md-8"
@@ -123,6 +136,10 @@
                         "help": {
                             "es": "Tipo de archivo",
                             "en":  "File's type"
+                        },
+                        "description":{
+                            "es": "Tipo de archivo que se desea imprimir.",
+                            "en": "File type you want to print."
                         },
                         "id": "fileType",
                         "css": "col-md-4"
@@ -158,8 +175,8 @@
                     {
                         "type": "folder_select",
                         "placeholder": {
-                            "es": "Ruta a Carpeta",
-                            "en": "Path to folder"                        
+                            "es": "C:/Users/User/Documents/file.pdf",
+                            "en": "C:/Users/User/Documents/file.pdf"                        
                         },
                         "title": {
                             "es": "Seleccionar una carpeta:",
@@ -168,6 +185,10 @@
                         "help": {
                             "es": "Ruta a la carpeta",
                             "en": "Path to folder"
+                        },
+                        "description":{
+                            "es": "Ruta de la carpeta que contiene los archivos a imprimir.",
+                            "en": "Path to folder that contains the files you want to print."
                         },
                         "id": "folderToPrint",
                         "css": "col-md-12"
@@ -195,6 +216,10 @@
                         "help": {
                             "es": "Tipo de archivo",
                             "en":  "File's type"
+                        },
+                        "description":{
+                            "es": "Tipo de archivo que se desea imprimir.",
+                            "en": "File type you want to print."
                         },
                         "id": "fileType",
                         "css": "col-md-4"
@@ -240,6 +265,10 @@
                             "es": "Nombre de variable sin {}",
                             "en": "Var name whitout {}",
                             "pr": "Var name whitout {}"
+                        },
+                        "description":{
+                            "es": "Variable para obtener todas las impresoras en la misma.",
+                            "en": "Obtain all printers in a variable."
                         },
                         "remove_vars": true,
                         "id": "result",
