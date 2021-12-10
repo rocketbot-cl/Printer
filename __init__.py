@@ -32,6 +32,14 @@ cur_path = base_path + "modules" + os.sep + "Printer" + os.sep + "libs" + os.sep
 if cur_path not in sys.path:
     sys.path.append(cur_path)
 
+GHOSTSCRIPT_PATH = cur_path + os.sep + "GSPRINT" + os.sep + "bin" + os.sep + "gswin32.exe"
+GSPRINT_PATH = cur_path + os.sep + "GSPRINT" + os.sep + "gsprint.exe"
+
+# # YOU CAN PUT HERE THE NAME OF YOUR SPECIFIC PRINTER INSTEAD OF DEFAULT
+# currentprinter = win32print.GetDefaultPrinter()
+
+# win32api.ShellExecute(0, 'open', GSPRINT_PATH, '-ghostscript "'+GHOSTSCRIPT_PATH+'" -printer "'+currentprinter+'" "PDFFile.pdf"', '.', 0)
+
 try:
 
     from win32 import win32api
@@ -84,20 +92,27 @@ try:
 
         fileType = GetParams("fileType")
         defaultPrinter = win32print.GetDefaultPrinter()
+
+        printerWanted = GetParams("printerWanted")
+
+        if printerWanted != None and printerWanted != "":
+            fileToPrint = GetParams("fileToPrint")
+            win32api.ShellExecute(0, 'open', GSPRINT_PATH, '-ghostscript "'+GHOSTSCRIPT_PATH+'" -printer "'+printerWanted+f'" "{fileToPrint}"', '.', 0)
         
-        if (fileType == "doc"):
-
-            myprinter = win32print.OpenPrinter(defaultPrinter)
-
-            fileToPrint = GetParams("fileToPrint")
-            if "/" in fileToPrint:
-                fileToPrint = fileToPrint.replace("/", "\\")
-
-            win32api.ShellExecute(0, "print", '"%s"' % fileToPrint, '"%s"' % myprinter, ".", 0)
-
-        elif (fileType == "txt"):
-            fileToPrint = GetParams("fileToPrint")
-            win32api.ShellExecute(0, "print", fileToPrint, None, ".", 0)
+        else:
+            if (fileType == "doc"):
+            
+                myprinter = win32print.OpenPrinter(defaultPrinter)
+    
+                fileToPrint = GetParams("fileToPrint")
+                if "/" in fileToPrint:
+                    fileToPrint = fileToPrint.replace("/", "\\")
+    
+                win32api.ShellExecute(0, "print", '"%s"' % fileToPrint, '"%s"' % myprinter, ".", 0)
+    
+            elif (fileType == "txt"):
+                fileToPrint = GetParams("fileToPrint")
+                win32api.ShellExecute(0, "print", fileToPrint, None, ".", 0)
         
 
     if module == "folder_to_print":
@@ -105,20 +120,27 @@ try:
         from glob import glob
 
         fileType = GetParams("fileType")
+        printerWanted = GetParams("printerWanted")
 
         defaultPrinter = win32print.GetDefaultPrinter()
         folderToPrint = GetParams("folderToPrint") + "/**/*"
         for fileToPrint in glob(folderToPrint, recursive=True):
 
-            if (fileType == "doc"):
+            if printerWanted != None and printerWanted != "":
+                # fileToPrint = GetParams("fileToPrint")
+                win32api.ShellExecute(0, 'open', GSPRINT_PATH, '-ghostscript "'+GHOSTSCRIPT_PATH+'" -printer "'+printerWanted+f'" "{fileToPrint}"', '.', 0)
+            else:
+                if (fileType == "doc"):
 
-                myprinter = win32print.OpenPrinter(defaultPrinter)
+                    myprinter = win32print.OpenPrinter(defaultPrinter)
 
-                win32api.ShellExecute(0, "print", '"%s"' % fileToPrint, '"%s"' % myprinter, ".", 0)
+                    win32api.ShellExecute(0, "print", '"%s"' % fileToPrint, '"%s"' % myprinter, ".", 0)
 
-            elif (fileType == "txt"):
+                elif (fileType == "txt"):
 
-                win32api.ShellExecute(0, "print", fileToPrint, defaultPrinter, ".", 0)
+                    win32api.ShellExecute(0, "print", fileToPrint, defaultPrinter, ".", 0)
+
+
 
 except Exception as e:
     print("\x1B[" + "31;40mError\x1B[" + "0m")

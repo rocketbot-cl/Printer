@@ -38,6 +38,7 @@ Imprime un archivo
 | --- | --- | --- |
 |Seleccionar un archivo|Seleccione el archivo que se desea imprimir.|C:/Users/User/Documents/file.pdf|
 |Tipo de archivo|Tipo de archivo que se desea imprimir.|txt: archivoAImprimir.txt - doc: archivo.docx, archivo.pdf|
+|Variable con la impresora deseada|Selecciona la impresora con la cual quiere imprimir.|HP-XS211|
 
 ### Imprimir archivos de una carpeta
   
@@ -46,6 +47,7 @@ Imprime archivos que estan en una carpeta
 | --- | --- | --- |
 |Seleccionar una carpeta|Ruta de la carpeta que contiene los archivos a imprimir.|C:/Users/User/Documents/file.pdf|
 |Tipo de archivo|Tipo de archivo que se desea imprimir.|txt: archivoAImprimir.txt - doc: archivo.docx, archivo.pdf|
+|Variable con la impresora deseada|Selecciona la impresora con la cual quiere imprimir.|HP-XS211|
 
 ### Obtener impresoras
   

@@ -4,7 +4,7 @@
 
 # Printer
   
-Módulo para impresoras.  
+Module for printers.  
 
 ## How to install this module
   
