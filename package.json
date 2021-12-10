@@ -197,8 +197,8 @@
                     {
                         "type": "folder_select",
                         "placeholder": {
-                            "es": "C:/Users/User/Documents/file.pdf",
-                            "en": "C:/Users/User/Documents/file.pdf"                        
+                            "es": "C:/Users/User/Documents",
+                            "en": "C:/Users/User/Documents"                        
                         },
                         "title": {
                             "es": "Seleccionar una carpeta:",
