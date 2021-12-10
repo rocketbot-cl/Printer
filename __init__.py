@@ -49,6 +49,16 @@ except Exception as e:
     PrintException()
     raise e
 
+def printers():
+    printerLocal = win32print.EnumPrinters(win32print.PRINTER_ENUM_LOCAL)
+    printerConnected = win32print.EnumPrinters(win32print.PRINTER_ENUM_CONNECTIONS)
+    printers =  printerLocal + printerConnected
+    Printers = []
+    for printer in printers:
+        # print(printercount, "-", printer[2])
+        Printers.append(printer[2])
+    return Printers
+
 module = GetParams("module")
 
 try:
@@ -58,15 +68,16 @@ try:
         result = GetParams("result")
 
 
-        printerLocal = win32print.EnumPrinters(win32print.PRINTER_ENUM_LOCAL)
-        printerConnected = win32print.EnumPrinters(win32print.PRINTER_ENUM_CONNECTIONS)
-        printers = printerLocal + printerConnected
+        # printerLocal = win32print.EnumPrinters(win32print.PRINTER_ENUM_LOCAL)
+        # printerConnected = win32print.EnumPrinters(win32print.PRINTER_ENUM_CONNECTIONS)
+        # printers = printerLocal + printerConnected
+        printers = printers()
         # Uncomment the 3 lines to see in console the list of printers
         # printercount = 0
-        Printers = []
-        for printer in printers:
-            # print(printercount, "-", printer[2])
-            Printers.append(printer[2])
+        # Printers = []
+        # for printer in printers:
+        #     # print(printercount, "-", printer[2])
+        #     Printers.append(printer[2])
             # printercount += 1
         
         SetVar("Printer_fake_var", {
@@ -82,6 +93,8 @@ try:
         
         if printer == "Seleccionar por variable":
             printer = GetParams("printerWanted")
+            assert printerWanted in printers(), f"'{printer}' not exists"
+            
 
             if "/" in printer:
                 printer = printer.replace("/", "\\")
@@ -96,7 +109,9 @@ try:
         printerWanted = GetParams("printerWanted")
 
         if printerWanted != None and printerWanted != "":
+            assert printerWanted in printers(), f"'{printer}' not exists"
             fileToPrint = GetParams("fileToPrint")
+            assert os.path.exists(fileToPrint), f"The path '{fileToPrint}' not exists"
             win32api.ShellExecute(0, 'open', GSPRINT_PATH, '-ghostscript "'+GHOSTSCRIPT_PATH+'" -printer "'+printerWanted+f'" "{fileToPrint}"', '.', 0)
         
         else:
@@ -127,6 +142,7 @@ try:
         for fileToPrint in glob(folderToPrint, recursive=True):
 
             if printerWanted != None and printerWanted != "":
+                assert printerWanted in printers(), f"'{printer}' not exists"
                 # fileToPrint = GetParams("fileToPrint")
                 win32api.ShellExecute(0, 'open', GSPRINT_PATH, '-ghostscript "'+GHOSTSCRIPT_PATH+'" -printer "'+printerWanted+f'" "{fileToPrint}"', '.', 0)
             else:
