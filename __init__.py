@@ -50,6 +50,7 @@ except Exception as e:
     raise e
 
 def printers():
+    global win32print
     printerLocal = win32print.EnumPrinters(win32print.PRINTER_ENUM_LOCAL)
     printerConnected = win32print.EnumPrinters(win32print.PRINTER_ENUM_CONNECTIONS)
     printers =  printerLocal + printerConnected
@@ -81,11 +82,11 @@ try:
             # printercount += 1
         
         SetVar("Printer_fake_var", {
-            "printers" : Printers,
+            "printers" : printers,
         })
 
         if result:
-            SetVar(result, Printers)
+            SetVar(result, printers)
     
     if module == "default_printer":
         printerWanted = GetParams("iframe")
@@ -109,7 +110,7 @@ try:
         printerWanted = GetParams("printerWanted")
 
         if printerWanted != None and printerWanted != "":
-            assert printerWanted in printers(), f"'{printer}' not exists"
+            assert printerWanted in printers(), f"'{printerWanted}' not exists"
             fileToPrint = GetParams("fileToPrint")
             assert os.path.exists(fileToPrint), f"The path '{fileToPrint}' not exists"
             win32api.ShellExecute(0, 'open', GSPRINT_PATH, '-ghostscript "'+GHOSTSCRIPT_PATH+'" -printer "'+printerWanted+f'" "{fileToPrint}"', '.', 0)
@@ -142,7 +143,7 @@ try:
         for fileToPrint in glob(folderToPrint, recursive=True):
 
             if printerWanted != None and printerWanted != "":
-                assert printerWanted in printers(), f"'{printer}' not exists"
+                assert printerWanted in printers(), f"'{printerWanted}' not exists"
                 # fileToPrint = GetParams("fileToPrint")
                 win32api.ShellExecute(0, 'open', GSPRINT_PATH, '-ghostscript "'+GHOSTSCRIPT_PATH+'" -printer "'+printerWanted+f'" "{fileToPrint}"', '.', 0)
             else:
