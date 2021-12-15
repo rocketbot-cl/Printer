@@ -93,14 +93,15 @@ try:
         printer = eval(printerWanted)["printer"]
         
         if printer == "Seleccionar por variable":
-            printer = GetParams("printerWanted")
+            printerWanted = GetParams("printerWanted")
             assert printerWanted in printers(), f"'{printer}' not exists"
             
 
             if "/" in printer:
                 printer = printer.replace("/", "\\")
-
-        win32print.SetDefaultPrinter(printer)
+            win32print.SetDefaultPrinter(printerWanted)
+        else:
+            win32print.SetDefaultPrinter(printer)
 
     if module == "print_file":
 
