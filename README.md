@@ -23,10 +23,10 @@ In order to use this module, you have to select a printer, then a file or folder
 Selects the default printer
 
 2. Print file  
-Prints a file
+Prints a file from a selected printer or from the default printer.
 
 3. Print files in folder  
-Prints files from a folder
+Prints files contain in a folder
 
 4. Get Printers  
 Get all printer installed in the system  
