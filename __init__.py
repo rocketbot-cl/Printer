@@ -98,7 +98,7 @@ try:
             
 
             if "/" in printer:
-                printer = printer.replace("/", "\\")
+                printer = printer.replace("/",os.sep)
             win32print.SetDefaultPrinter(printerWanted)
         else:
             win32print.SetDefaultPrinter(printer)
@@ -114,6 +114,12 @@ try:
             assert printerWanted in printers(), f"'{printerWanted}' not exists"
             fileToPrint = GetParams("fileToPrint")
             assert os.path.exists(fileToPrint), f"The path '{fileToPrint}' not exists"
+            
+            if "/" in printer:
+                printer = printer.replace("/",os.sep)
+            if "/" in fileToPrint:
+                fileToPrint = fileToPrint.replace("/",os.sep)
+            
             win32api.ShellExecute(0, 'open', GSPRINT_PATH, '-ghostscript "'+GHOSTSCRIPT_PATH+'" -LPDF -printer "'+printerWanted+f'" "{fileToPrint}"', '.', 0)
         
         else:
@@ -123,7 +129,7 @@ try:
     
                 fileToPrint = GetParams("fileToPrint")
                 if "/" in fileToPrint:
-                    fileToPrint = fileToPrint.replace("/", "\\")
+                    fileToPrint = fileToPrint.replace("/",os.sep)
     
                 win32api.ShellExecute(0, "print", '"%s"' % fileToPrint, '"%s"' % myprinter, ".", 0)
     
@@ -149,6 +155,8 @@ try:
                 win32api.ShellExecute(0, 'open', GSPRINT_PATH, '-ghostscript "'+GHOSTSCRIPT_PATH+'" -LPDF -printer "'+printerWanted+f'" "{fileToPrint}"', '.', 0)
             else:
                 if (fileType == "doc"):
+                    if "/" in fileToPrint:
+                        fileToPrint = fileToPrint.replace("/",os.sep)
 
                     myprinter = win32print.OpenPrinter(defaultPrinter)
 
