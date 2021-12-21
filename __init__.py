@@ -114,7 +114,7 @@ try:
             assert printerWanted in printers(), f"'{printerWanted}' not exists"
             fileToPrint = GetParams("fileToPrint")
             assert os.path.exists(fileToPrint), f"The path '{fileToPrint}' not exists"
-            win32api.ShellExecute(0, 'open', GSPRINT_PATH, '-ghostscript "'+GHOSTSCRIPT_PATH+'" -printer "'+printerWanted+f'" "{fileToPrint}"', '.', 0)
+            win32api.ShellExecute(0, 'open', GSPRINT_PATH, '-ghostscript "'+GHOSTSCRIPT_PATH+'" -LPDF -printer "'+printerWanted+f'" "{fileToPrint}"', '.', 0)
         
         else:
             if (fileType == "doc"):
@@ -146,7 +146,7 @@ try:
             if printerWanted != None and printerWanted != "":
                 assert printerWanted in printers(), f"'{printerWanted}' not exists"
                 # fileToPrint = GetParams("fileToPrint")
-                win32api.ShellExecute(0, 'open', GSPRINT_PATH, '-ghostscript "'+GHOSTSCRIPT_PATH+'" -printer "'+printerWanted+f'" "{fileToPrint}"', '.', 0)
+                win32api.ShellExecute(0, 'open', GSPRINT_PATH, '-ghostscript "'+GHOSTSCRIPT_PATH+'" -LPDF -printer "'+printerWanted+f'" "{fileToPrint}"', '.', 0)
             else:
                 if (fileType == "doc"):
 
