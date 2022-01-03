@@ -142,8 +142,8 @@
                             "en": "txt: fileToPrint.txt - doc: file.docx, file.pdf"
                         },
                         "description":{
-                            "es": "Tipo de archivo que se desea imprimir.",
-                            "en": "File type you want to print."
+                            "es": "Imprime un archivo desde una impresora seleccionada o la por defecto.",
+                            "en": "Prints a file from a selected printer or from the default printer."
                         },
                         "id": "fileType",
                         "css": "col-md-4"

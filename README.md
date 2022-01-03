@@ -31,7 +31,9 @@ Prints files contain in a folder
 4. Get Printers  
 Get all printer installed in the system  
 
-
+## Updates
+### 29-Dic-2021
+- Add option to print from any printer.
 
 
 ----
