@@ -23,6 +23,7 @@ Para instalar librerias se debe ingresar por terminal a la carpeta "libs"
    sudo pip install <package> -t .
 
 """
+import time
 import sys
 import os
 from pathlib import Path
@@ -34,6 +35,12 @@ if cur_path not in sys.path:
 
 GHOSTSCRIPT_PATH = cur_path + os.sep + "GSPRINT" + os.sep + "bin" + os.sep + "gswin32.exe"
 GSPRINT_PATH = cur_path + os.sep + "GSPRINT" + os.sep + "gsprint.exe"
+# Constants from wingdi.h
+DM_OUT_BUFFER = 0x02
+DM_IN_BUFFER = 0x08
+DM_IN_PROMPT = 0x04
+DM_DEFAULT_SOURCE = 0x200
+
 
 # # YOU CAN PUT HERE THE NAME OF YOUR SPECIFIC PRINTER INSTEAD OF DEFAULT
 # currentprinter = win32print.GetDefaultPrinter()
@@ -43,7 +50,7 @@ GSPRINT_PATH = cur_path + os.sep + "GSPRINT" + os.sep + "gsprint.exe"
 try:
 
     from win32 import win32api
-
+    from win32 import win32gui
     from win32 import win32print
 except Exception as e:
     PrintException()
@@ -104,69 +111,124 @@ try:
             win32print.SetDefaultPrinter(printer)
 
     if module == "print_file":
-
-        fileType = GetParams("fileType")
-        defaultPrinter = win32print.GetDefaultPrinter()
-
+        fileToPrint = GetParams("fileToPrint")
+        # fileType = GetParams("fileType") # I leave it 
+        config = GetParams("config")
         printerWanted = GetParams("printerWanted")
+        pages = GetParams("pages")
+        color = GetParams("color")
+        from_page = GetParams("from_page")
+        to_page = GetParams("to_page")
+        copies = GetParams('copies')
+        
+        defaultPrinter = win32print.GetDefaultPrinter()
+        
+        if "/" in fileToPrint:
+            fileToPrint = fileToPrint.replace("/",os.sep)
+        assert os.path.exists(fileToPrint), f"The path '{fileToPrint}' not exists"
+        
+        if config:
+            config = eval(config)
 
-        if printerWanted != None and printerWanted != "":
-            assert printerWanted in printers(), f"'{printerWanted}' not exists"
-            fileToPrint = GetParams("fileToPrint")
-            assert os.path.exists(fileToPrint), f"The path '{fileToPrint}' not exists"
+        if config == True:
+            if printerWanted != None and printerWanted != "":
+                assert printerWanted in printers(), f"'{printerWanted}' not exists"
+                if "/" in printerWanted:
+                    printerWanted = printerWanted.replace("/",os.sep)
+            else:
+                printerWanted = defaultPrinter
+                
+            if not copies:
+                copies = 1
             
-            if "/" in printer:
-                printer = printer.replace("/",os.sep)
-            if "/" in fileToPrint:
-                fileToPrint = fileToPrint.replace("/",os.sep)
+            if not color:
+                color_ = ''
+            else:
+                color_ = color
             
-            win32api.ShellExecute(0, 'open', GSPRINT_PATH, '-ghostscript "'+GHOSTSCRIPT_PATH+'" -LPDF -printer "'+printerWanted+f'" "{fileToPrint}"', '.', 0)
-        
+            pages_ = ''
+            if not pages:
+                    pages_ = ' -all'
+            elif pages == 'custom':
+                if from_page:
+                    from_ = f' -from {from_page}'
+                else:
+                    from_ = ' -from 1'
+                if to_page:
+                    to_ = f' -to {to_page}'
+                else:
+                    to_ = ''
+                pages_ = from_ + ' ' + to_
+            else:
+                pages_ = pages
+            
+            
+            win32api.ShellExecute(0, 'open', GSPRINT_PATH, f'{color_} -ghostscript "'+GHOSTSCRIPT_PATH+'" -printer "'+printerWanted+f'"{pages_} -copies {copies} "{fileToPrint}"', '.', 0)
+            time.sleep(10)
+            
         else:
-            if (fileType == "doc"):
-            
-                myprinter = win32print.OpenPrinter(defaultPrinter)
-    
-                fileToPrint = GetParams("fileToPrint")
-                if "/" in fileToPrint:
-                    fileToPrint = fileToPrint.replace("/",os.sep)
-    
-                win32api.ShellExecute(0, "print", '"%s"' % fileToPrint, '"%s"' % myprinter, ".", 0)
-    
-            elif (fileType == "txt"):
-                fileToPrint = GetParams("fileToPrint")
-                win32api.ShellExecute(0, "print", fileToPrint, None, ".", 0)
-        
+            myprinter = win32print.OpenPrinter(defaultPrinter)
+            win32api.ShellExecute(0, "print", '"%s"' % fileToPrint, '"%s"' % myprinter, ".", 0)
 
     if module == "folder_to_print":
 
         from glob import glob
 
-        fileType = GetParams("fileType")
+        config = GetParams("config")
         printerWanted = GetParams("printerWanted")
-
+        pages = GetParams("pages")
+        color = GetParams("color")
+        from_page = GetParams("from_page")
+        to_page = GetParams("to_page")
+        copies = GetParams('copies')
         defaultPrinter = win32print.GetDefaultPrinter()
         folderToPrint = GetParams("folderToPrint") + "/**/*"
+   
+        defaultPrinter = win32print.GetDefaultPrinter()
+
+        if config:
+                config = eval(config)
+        
         for fileToPrint in glob(folderToPrint, recursive=True):
-
-            if printerWanted != None and printerWanted != "":
-                assert printerWanted in printers(), f"'{printerWanted}' not exists"
-                # fileToPrint = GetParams("fileToPrint")
-                win32api.ShellExecute(0, 'open', GSPRINT_PATH, '-ghostscript "'+GHOSTSCRIPT_PATH+'" -LPDF -printer "'+printerWanted+f'" "{fileToPrint}"', '.', 0)
+           
+            if config == True:
+                if printerWanted != None and printerWanted != "":
+                    assert printerWanted in printers(), f"'{printerWanted}' not exists"
+                    if "/" in printerWanted:
+                        printerWanted = printerWanted.replace("/",os.sep)
+                else:
+                    printerWanted = defaultPrinter
+                    
+                if not copies:
+                    copies = 1
+                
+                if not color:
+                    color_ = ''
+                else:
+                    color_ = color
+                
+                pages_ = ''
+                if not pages:
+                        pages_ = ' -all'
+                elif pages == 'custom':
+                    if from_page:
+                        from_ = f' -from {from_page}'
+                    else:
+                        from_ = ' -from 1'
+                    if to_page:
+                        to_ = f' -to {to_page}'
+                    else:
+                        to_ = ''
+                    pages_ = from_ + ' ' + to_
+                else:
+                    pages_ = pages
+                
+                win32api.ShellExecute(0, 'open', GSPRINT_PATH, f'{color_} -ghostscript "'+GHOSTSCRIPT_PATH+'" -printer "'+printerWanted+f'"{pages_} -copies {copies} "{fileToPrint}"', '.', 0)
+                time.sleep(10)
+                
             else:
-                if (fileType == "doc"):
-                    if "/" in fileToPrint:
-                        fileToPrint = fileToPrint.replace("/",os.sep)
-
-                    myprinter = win32print.OpenPrinter(defaultPrinter)
-
-                    win32api.ShellExecute(0, "print", '"%s"' % fileToPrint, '"%s"' % myprinter, ".", 0)
-
-                elif (fileType == "txt"):
-
-                    win32api.ShellExecute(0, "print", fileToPrint, defaultPrinter, ".", 0)
-
-
+                myprinter = win32print.OpenPrinter(defaultPrinter)
+                win32api.ShellExecute(0, "print", '"%s"' % fileToPrint, '"%s"' % myprinter, ".", 0)
 
 except Exception as e:
     print("\x1B[" + "31;40mError\x1B[" + "0m")

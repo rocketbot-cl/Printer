@@ -1,57 +1,61 @@
-
-
-
-
-# Impresora
+# Printer
   
-Módulo para impresoras.  
+Module for printers.  
   
 ![banner](imgs/Banner_Printer.png)
-
-## Como instalar este módulo
+## How to install this module
   
-__Descarga__ e __instala__ el contenido en la carpeta 'modules' en la ruta de rocketbot.  
+__Download__ and __install__ the content in 'modules' folder in Rocketbot path  
 
 
 
 
-## Como usar este módulo
-Para usar este módulo, tienes que proporcionar una impresora default, luego seleccionar un 
-archivo o una carpeta que contiene a los archivos que se desean imprimir.
+## How to use this module
+
+In order to use this module, you have to select a default printer, then a file or folder that contains all the files you want to print.
 
 
+## Description of the commands
 
-## Descripción de los comandos
-
-### Impresora por defecto
+### Get Printers
   
-Selecciona la impresora por defecto
-|Parámetros|Descripción|ejemplo|
+Get all printer installed in the system.
+|Parameters|Description|example|
 | --- | --- | --- |
-|Seleccione la impresora|Seleccionador para la impresora por defecto que se desea.||
-|Variable con la impresora deseada|Usar esta entrada si se seleccionó Seleccionar por impresora en el selector anterior.|HP-XS211|
+|Assign to var|Obtain all printers in a variable.|Variable|
 
-### Imprimir archivo
+### Default printer
   
-Imprime un archivo
-|Parámetros|Descripción|ejemplo|
+Selects the default printer
+|Parameters|Description|example|
 | --- | --- | --- |
-|Seleccionar un archivo|Seleccione el archivo que se desea imprimir.|C:/Users/User/Documents/file.pdf|
-|Tipo de archivo|Tipo de archivo que se desea imprimir.|txt: archivoAImprimir.txt - doc: archivo.docx, archivo.pdf|
-|Variable con la impresora deseada|Selecciona la impresora con la cual quiere imprimir.|HP-XS211|
+|Select printer|Select the default printer you want.||
+|Variable with printer wanted|Use this field if you do not select a printer in the previous selector.|HP-XS211|
 
-### Imprimir archivos de una carpeta
+### Print file
   
-Imprime archivos que estan en una carpeta
-|Parámetros|Descripción|ejemplo|
+Print a file
+|Parameters|Description|example|
 | --- | --- | --- |
-|Seleccionar una carpeta|Ruta de la carpeta que contiene los archivos a imprimir.|C:/Users/User/Documents/file.pdf|
-|Tipo de archivo|Tipo de archivo que se desea imprimir.|txt: archivoAImprimir.txt - doc: archivo.docx, archivo.pdf|
-|Variable con la impresora deseada|Selecciona la impresora con la cual quiere imprimir.|HP-XS211|
+|Select a file|Select the file you want to print.|C:/Users/User/Documents/file.pdf|
+|Set custom printing|Check if you want to configure printing.|False|
+|Printer wanted (Optional)|Select the printer which you want to print with.|HP-XS211|
+|Number of wanted copies (Optional)|Number of copies.|1|
+|Printer quality (Optional)||3|
+|Range of pages to print (Optional)|Range of pages to print. You can choose a default option or set a custom range.|3|
+|Starting page (Optional)|First page to print.|3|
+|Ending page (Optional)|Last page to print.|5|
 
-### Obtener impresoras
+### Print files in folder
   
-Obtiene todas las impresoras instaladas en el sistema
-|Parámetros|Descripción|ejemplo|
+Prints files from a folder
+|Parameters|Description|example|
 | --- | --- | --- |
-|Asignar a variable|Variable para obtener todas las impresoras en la misma.|Variable|
+|Select a Folder|Path to folder that contains the files you want to print.|C:/Users/User/Documents|
+|Set custom printing|Check if you want to configure printing.|False|
+|Printer wanted (Optional)|Select the printer which you want to print with.|HP-XS211|
+|Number of wanted copies (Optional)|Number of copies.|1|
+|Printer quality (Optional)||3|
+|Range of pages to print (Optional)|Range of pages to print. You can choose a default option or set a custom range.|3|
+|Starting page (Optional)|First page to print.|3|
+|Ending page (Optional)|Last page to print.|5|
