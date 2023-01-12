@@ -1,296 +1,36 @@
 {
-    "author": "Caleb Cipra",
-    "description":"Módulo para impresoras." ,
+    "author": "Caleb Cipra - Juan Siro",
+    "description":"Module for printers. | Módulo para impressoras. | Módulo para impresoras." ,
     "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-    "version": "1.4.3",
+    "version": "1.5.0",
     "license": "MIT",
-    "homepage": "http://rocketbot.co/",
+    "homepage": "http://rocketbot.com/",
     "name": "Printer",
     "linux": false,
     "windows": true,
     "mac": false,
     "docker": false,
     "dependencies": {
-      
     },
     "title": {
         "en": "Printer",
-        "es": "Impresora"
-  
+        "es": "Impresora",
+        "pr": "Impressora"
     },
     "icon": " data:image/svg+xml;base64,PHN2ZyBpZD0iX3gzMV9fcHgiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iNTEyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Im0yMS41IDE4aC0zYy0uMjc2IDAtLjUtLjIyNC0uNS0uNXMuMjI0LS41LjUtLjVoM2MuODI3IDAgMS41LS42NzMgMS41LTEuNXYtN2MwLS44MjctLjY3My0xLjUtMS41LTEuNWgtMTljLS44MjcgMC0xLjUuNjczLTEuNSAxLjV2N2MwIC44MjcuNjczIDEuNSAxLjUgMS41aDNjLjI3NiAwIC41LjIyNC41LjVzLS4yMjQuNS0uNS41aC0zYy0xLjM3OSAwLTIuNS0xLjEyMi0yLjUtMi41di03YzAtMS4zNzggMS4xMjEtMi41IDIuNS0yLjVoMTljMS4zNzkgMCAyLjUgMS4xMjIgMi41IDIuNXY3YzAgMS4zNzgtMS4xMjEgMi41LTIuNSAyLjV6Ii8+PHBhdGggZD0ibTE0LjUgMjFoLTZjLS4yNzYgMC0uNS0uMjI0LS41LS41cy4yMjQtLjUuNS0uNWg2Yy4yNzYgMCAuNS4yMjQuNS41cy0uMjI0LjUtLjUuNXoiLz48cGF0aCBkPSJtMTQuNSAxOWgtNmMtLjI3NiAwLS41LS4yMjQtLjUtLjVzLjIyNC0uNS41LS41aDZjLjI3NiAwIC41LjIyNC41LjVzLS4yMjQuNS0uNS41eiIvPjxwYXRoIGQ9Im0xMC41IDE3aC0yYy0uMjc2IDAtLjUtLjIyNC0uNS0uNXMuMjI0LS41LjUtLjVoMmMuMjc2IDAgLjUuMjI0LjUuNXMtLjIyNC41LS41LjV6Ii8+PHBhdGggZD0ibTE4LjUgN2MtLjI3NiAwLS41LS4yMjQtLjUtLjV2LTRjMC0uODI3LS42NzMtMS41LTEuNS0xLjVoLTljLS44MjcgMC0xLjUuNjczLTEuNSAxLjV2NGMwIC4yNzYtLjIyNC41LS41LjVzLS41LS4yMjQtLjUtLjV2LTRjMC0xLjM3OCAxLjEyMS0yLjUgMi41LTIuNWg5YzEuMzc5IDAgMi41IDEuMTIyIDIuNSAyLjV2NGMwIC4yNzYtLjIyNC41LS41LjV6Ii8+PHBhdGggZD0ibTE2LjUgMjRoLTljLTEuMzc5IDAtMi41LTEuMTIyLTIuNS0yLjV2LThjMC0uMjc2LjIyNC0uNS41LS41aDEzYy4yNzYgMCAuNS4yMjQuNS41djhjMCAxLjM3OC0xLjEyMSAyLjUtMi41IDIuNXptLTEwLjUtMTB2Ny41YzAgLjgyNy42NzMgMS41IDEuNSAxLjVoOWMuODI3IDAgMS41LS42NzMgMS41LTEuNXYtNy41eiIvPjwvc3ZnPg==",
     "children": [
-  
         {
-            "en": {
-                "title": "Default printer",
-                "description": "Selects the default printer"
-            },
-            "es": {
-                "title": "Impresora por defecto",
-                "description": "Selecciona la impresora por defecto"
-            },
-            "form": {
-                "css": "modal-lg",
-                "style": "width:1000px;",
-                "inputs": [
-                    {
-                        "type": "html",
-                        "title": {
-                            "es": "Seleccione la impresora",
-                            "en": "Select printer"
-                        },
-                        "src": "index.html",
-                        "id": "html",
-                        "css": "col-md-12",
-                        "style": "height:100px;",
-                        "description":{
-                            "es": "Seleccionador para la impresora por defecto que se desea.",
-                            "en": "Select the default printer you want."
-                        }
-                        
-                    },
-                    {
-                        "type": "input",
-                        "placeholder": "HP-XS211",
-                        "title": {
-                          "en": "Variable with printer wanted:",
-                          "es": "Variable con la impresora deseada:"
-                        },
-                        "description":{
-                            "es": "Usar esta entrada si se seleccionó Seleccionar por impresora en el selector anterior.",
-                            "en": "Use this input if you choosed select default printer in the top selector."
-                        },
-                        "id": "printerWanted",
-                        "css": "col-md-6"
-                    }
-                ]
-            },
-            "video_youtube": "",
-            "icon": " data:image/svg+xml;base64,PHN2ZyBpZD0iX3gzMV9fcHgiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iNTEyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Im0yMS41IDE4aC0zYy0uMjc2IDAtLjUtLjIyNC0uNS0uNXMuMjI0LS41LjUtLjVoM2MuODI3IDAgMS41LS42NzMgMS41LTEuNXYtN2MwLS44MjctLjY3My0xLjUtMS41LTEuNWgtMTljLS44MjcgMC0xLjUuNjczLTEuNSAxLjV2N2MwIC44MjcuNjczIDEuNSAxLjUgMS41aDNjLjI3NiAwIC41LjIyNC41LjVzLS4yMjQuNS0uNS41aC0zYy0xLjM3OSAwLTIuNS0xLjEyMi0yLjUtMi41di03YzAtMS4zNzggMS4xMjEtMi41IDIuNS0yLjVoMTljMS4zNzkgMCAyLjUgMS4xMjIgMi41IDIuNXY3YzAgMS4zNzgtMS4xMjEgMi41LTIuNSAyLjV6Ii8+PHBhdGggZD0ibTE0LjUgMjFoLTZjLS4yNzYgMC0uNS0uMjI0LS41LS41cy4yMjQtLjUuNS0uNWg2Yy4yNzYgMCAuNS4yMjQuNS41cy0uMjI0LjUtLjUuNXoiLz48cGF0aCBkPSJtMTQuNSAxOWgtNmMtLjI3NiAwLS41LS4yMjQtLjUtLjVzLjIyNC0uNS41LS41aDZjLjI3NiAwIC41LjIyNC41LjVzLS4yMjQuNS0uNS41eiIvPjxwYXRoIGQ9Im0xMC41IDE3aC0yYy0uMjc2IDAtLjUtLjIyNC0uNS0uNXMuMjI0LS41LjUtLjVoMmMuMjc2IDAgLjUuMjI0LjUuNXMtLjIyNC41LS41LjV6Ii8+PHBhdGggZD0ibTE4LjUgN2MtLjI3NiAwLS41LS4yMjQtLjUtLjV2LTRjMC0uODI3LS42NzMtMS41LTEuNS0xLjVoLTljLS44MjcgMC0xLjUuNjczLTEuNSAxLjV2NGMwIC4yNzYtLjIyNC41LS41LjVzLS41LS4yMjQtLjUtLjV2LTRjMC0xLjM3OCAxLjEyMS0yLjUgMi41LTIuNWg5YzEuMzc5IDAgMi41IDEuMTIyIDIuNSAyLjV2NGMwIC4yNzYtLjIyNC41LS41LjV6Ii8+PHBhdGggZD0ibTE2LjUgMjRoLTljLTEuMzc5IDAtMi41LTEuMTIyLTIuNS0yLjV2LThjMC0uMjc2LjIyNC0uNS41LS41aDEzYy4yNzYgMCAuNS4yMjQuNS41djhjMCAxLjM3OC0xLjEyMSAyLjUtMi41IDIuNXptLTEwLjUtMTB2Ny41YzAgLjgyNy42NzMgMS41IDEuNSAxLjVoOWMuODI3IDAgMS41LS42NzMgMS41LTEuNXYtNy41eiIvPjwvc3ZnPg==",
-            "module": "default_printer",
-            "module_name": "Printer",
-            "visible": true,
-            "options": false,
-            "father": "module",
-            "group": "scripts",
-            "linux": false,
-            "windows": true,
-            "mac": false,
-            "docker": false
-        },
-        {
-            "en": {
-                "title": "Print file",
-                "description": "Prints a file"
-            },
-            "es": {
-                "title": "Imprimir archivo",
-                "description": "Imprime un archivo"
-            },
-            "form": {
-                "css": "modal-lg",
-                "style": "width:1000px;",
-                "inputs": [
-                    {
-                        "type": "file_select",
-                        "placeholder": {
-                            "es": "C:/Users/User/Documents/file.pdf",
-                            "en": "C:/Users/User/Documents/file.pdf"
-                        },
-                        "title": {
-                            "es": "Seleccionar un archivo:",
-                            "en": "Select a file:"
-                        },
-                        "help": {
-                            "es": "Ruta donde está el archivo",
-                            "en": "Path to file"
-                        },
-                        "description":{
-                            "es": "Seleccione el archivo que se desea imprimir.",
-                            "en": "Select the file you want to print."
-                        },
-                        "id": "fileToPrint",
-                        "css": "col-md-8"
-                    },
-                    {
-                        "type": "select",
-                        "title": {
-                          "es": "Tipo de archivo:",
-                          "en": "File's type:"
-                        },
-                        "options": [
-                          {
-                            "title": "--Seleccione--",
-                            "value": ""
-                          },
-                          {
-                            "title": "text",
-                            "value": "txt"
-                          },
-                          {
-                            "title": "doc",
-                            "value": "doc"
-                          }
-                        ],
-                        "help": {
-                            "es": "txt: archivoAImprimir.txt - doc: archivo.docx, archivo.pdf",
-                            "en": "txt: fileToPrint.txt - doc: file.docx, file.pdf"
-                        },
-                        "placeholder": {
-                            "es": "txt: archivoAImprimir.txt - doc: archivo.docx, archivo.pdf",
-                            "en": "txt: fileToPrint.txt - doc: file.docx, file.pdf"
-                        },
-                        "description":{
-                            "es": "Tipo de archivo que se desea imprimir.",
-                            "en": "File type you want to print."
-                        },
-                        "id": "fileType",
-                        "css": "col-md-4"
-                    },
-                    {
-                        "type": "input",
-                        "placeholder": "HP-XS211",
-                        "title": {
-                          "en": "Variable with printer wanted:",
-                          "es": "Variable con la impresora deseada:"
-                        },
-                        "description":{
-                            "es": "Selecciona la impresora con la cual quiere imprimir.",
-                            "en": "Select the printer which you want to print with."
-                        },
-                        "help":{
-                            "es": "Dejar en blanco si se desea usar la impresora por defecto.",
-                            "en": "Leave empty if you want to use the default printer."
-                        },
-                        "id": "printerWanted",
-                        "css": "col-md-6"
-                    }
-                ]
-            },
-            "video_youtube": "",
-            "icon": " data:image/svg+xml;base64,PHN2ZyBpZD0iX3gzMV9fcHgiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iNTEyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Im0yMS41IDE4aC0zYy0uMjc2IDAtLjUtLjIyNC0uNS0uNXMuMjI0LS41LjUtLjVoM2MuODI3IDAgMS41LS42NzMgMS41LTEuNXYtN2MwLS44MjctLjY3My0xLjUtMS41LTEuNWgtMTljLS44MjcgMC0xLjUuNjczLTEuNSAxLjV2N2MwIC44MjcuNjczIDEuNSAxLjUgMS41aDNjLjI3NiAwIC41LjIyNC41LjVzLS4yMjQuNS0uNS41aC0zYy0xLjM3OSAwLTIuNS0xLjEyMi0yLjUtMi41di03YzAtMS4zNzggMS4xMjEtMi41IDIuNS0yLjVoMTljMS4zNzkgMCAyLjUgMS4xMjIgMi41IDIuNXY3YzAgMS4zNzgtMS4xMjEgMi41LTIuNSAyLjV6Ii8+PHBhdGggZD0ibTE0LjUgMjFoLTZjLS4yNzYgMC0uNS0uMjI0LS41LS41cy4yMjQtLjUuNS0uNWg2Yy4yNzYgMCAuNS4yMjQuNS41cy0uMjI0LjUtLjUuNXoiLz48cGF0aCBkPSJtMTQuNSAxOWgtNmMtLjI3NiAwLS41LS4yMjQtLjUtLjVzLjIyNC0uNS41LS41aDZjLjI3NiAwIC41LjIyNC41LjVzLS4yMjQuNS0uNS41eiIvPjxwYXRoIGQ9Im0xMC41IDE3aC0yYy0uMjc2IDAtLjUtLjIyNC0uNS0uNXMuMjI0LS41LjUtLjVoMmMuMjc2IDAgLjUuMjI0LjUuNXMtLjIyNC41LS41LjV6Ii8+PHBhdGggZD0ibTE4LjUgN2MtLjI3NiAwLS41LS4yMjQtLjUtLjV2LTRjMC0uODI3LS42NzMtMS41LTEuNS0xLjVoLTljLS44MjcgMC0xLjUuNjczLTEuNSAxLjV2NGMwIC4yNzYtLjIyNC41LS41LjVzLS41LS4yMjQtLjUtLjV2LTRjMC0xLjM3OCAxLjEyMS0yLjUgMi41LTIuNWg5YzEuMzc5IDAgMi41IDEuMTIyIDIuNSAyLjV2NGMwIC4yNzYtLjIyNC41LS41LjV6Ii8+PHBhdGggZD0ibTE2LjUgMjRoLTljLTEuMzc5IDAtMi41LTEuMTIyLTIuNS0yLjV2LThjMC0uMjc2LjIyNC0uNS41LS41aDEzYy4yNzYgMCAuNS4yMjQuNS41djhjMCAxLjM3OC0xLjEyMSAyLjUtMi41IDIuNXptLTEwLjUtMTB2Ny41YzAgLjgyNy42NzMgMS41IDEuNSAxLjVoOWMuODI3IDAgMS41LS42NzMgMS41LTEuNXYtNy41eiIvPjwvc3ZnPg==",
-            "module": "print_file",
-            "module_name": "Printer",
-            "visible": true,
-            "options": false,
-            "father": "module",
-            "group": "scripts",
-            "linux": false,
-            "windows": true,
-            "mac": false,
-            "docker": false
-        },
-        {
-            "en": {
-                "title": "Print files in folder",
-                "description": "Prints files from a folder"
-            },
-            "es": {
-                "title": "Imprimir archivos de una carpeta",
-                "description": "Imprime archivos que estan en una carpeta"
-            },
-            "form": {
-                "css": "modal-lg",
-                "style": "width:1000px;",
-                "inputs": [
-                    {
-                        "type": "folder_select",
-                        "placeholder": {
-                            "es": "C:/Users/User/Documents",
-                            "en": "C:/Users/User/Documents"                        
-                        },
-                        "title": {
-                            "es": "Seleccionar una carpeta:",
-                            "en": "Select a Folder:"
-                        },
-                        "help": {
-                            "es": "Ruta a la carpeta",
-                            "en": "Path to folder"
-                        },
-                        "description":{
-                            "es": "Ruta de la carpeta que contiene los archivos a imprimir.",
-                            "en": "Path to folder that contains the files you want to print."
-                        },
-                        "id": "folderToPrint",
-                        "css": "col-md-12"
-                    },
-                    {
-                        "type": "select",
-                        "title": {
-                          "es": "Tipo de archivo:",
-                          "en": "File's type:"
-                        },
-                        "options": [
-                          {
-                            "title": "--Seleccione--",
-                            "value": ""
-                          },
-                          {
-                            "title": "text",
-                            "value": "txt"
-                          },
-                          {
-                            "title": "doc",
-                            "value": "doc"
-                          }
-                        ],
-                        "help": {
-                            "es": "txt: archivoAImprimir.txt - doc: archivo.docx, archivo.pdf",
-                            "en": "txt: fileToPrint.txt - doc: file.docx, file.pdf"
-                        },
-                        "placeholder": {
-                            "es": "txt: archivoAImprimir.txt - doc: archivo.docx, archivo.pdf",
-                            "en": "txt: fileToPrint.txt - doc: file.docx, file.pdf"
-                        },
-                        "description":{
-                            "es": "Tipo de archivo que se desea imprimir.",
-                            "en": "File type you want to print."
-                        },
-                        "id": "fileType",
-                        "css": "col-md-4"
-                    },
-                    {
-                        "type": "input",
-                        "placeholder": "HP-XS211",
-                        "title": {
-                          "en": "Variable with printer wanted:",
-                          "es": "Variable con la impresora deseada:"
-                        },
-                        "description":{
-                            "es": "Selecciona la impresora con la cual quiere imprimir.",
-                            "en": "Select the printer which you want to print with."
-                        },
-                        "help":{
-                            "es": "Dejar en blanco si se desea usar la impresora por defecto.",
-                            "en": "Leave empty if you want to use the default printer."
-                        },
-                        "id": "printerWanted",
-                        "css": "col-md-6"
-                    }
-                ]
-            },
-            "video_youtube": "",
-            "icon": " data:image/svg+xml;base64,PHN2ZyBpZD0iX3gzMV9fcHgiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iNTEyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Im0yMS41IDE4aC0zYy0uMjc2IDAtLjUtLjIyNC0uNS0uNXMuMjI0LS41LjUtLjVoM2MuODI3IDAgMS41LS42NzMgMS41LTEuNXYtN2MwLS44MjctLjY3My0xLjUtMS41LTEuNWgtMTljLS44MjcgMC0xLjUuNjczLTEuNSAxLjV2N2MwIC44MjcuNjczIDEuNSAxLjUgMS41aDNjLjI3NiAwIC41LjIyNC41LjVzLS4yMjQuNS0uNS41aC0zYy0xLjM3OSAwLTIuNS0xLjEyMi0yLjUtMi41di03YzAtMS4zNzggMS4xMjEtMi41IDIuNS0yLjVoMTljMS4zNzkgMCAyLjUgMS4xMjIgMi41IDIuNXY3YzAgMS4zNzgtMS4xMjEgMi41LTIuNSAyLjV6Ii8+PHBhdGggZD0ibTE0LjUgMjFoLTZjLS4yNzYgMC0uNS0uMjI0LS41LS41cy4yMjQtLjUuNS0uNWg2Yy4yNzYgMCAuNS4yMjQuNS41cy0uMjI0LjUtLjUuNXoiLz48cGF0aCBkPSJtMTQuNSAxOWgtNmMtLjI3NiAwLS41LS4yMjQtLjUtLjVzLjIyNC0uNS41LS41aDZjLjI3NiAwIC41LjIyNC41LjVzLS4yMjQuNS0uNS41eiIvPjxwYXRoIGQ9Im0xMC41IDE3aC0yYy0uMjc2IDAtLjUtLjIyNC0uNS0uNXMuMjI0LS41LjUtLjVoMmMuMjc2IDAgLjUuMjI0LjUuNXMtLjIyNC41LS41LjV6Ii8+PHBhdGggZD0ibTE4LjUgN2MtLjI3NiAwLS41LS4yMjQtLjUtLjV2LTRjMC0uODI3LS42NzMtMS41LTEuNS0xLjVoLTljLS44MjcgMC0xLjUuNjczLTEuNSAxLjV2NGMwIC4yNzYtLjIyNC41LS41LjVzLS41LS4yMjQtLjUtLjV2LTRjMC0xLjM3OCAxLjEyMS0yLjUgMi41LTIuNWg5YzEuMzc5IDAgMi41IDEuMTIyIDIuNSAyLjV2NGMwIC4yNzYtLjIyNC41LS41LjV6Ii8+PHBhdGggZD0ibTE2LjUgMjRoLTljLTEuMzc5IDAtMi41LTEuMTIyLTIuNS0yLjV2LThjMC0uMjc2LjIyNC0uNS41LS41aDEzYy4yNzYgMCAuNS4yMjQuNS41djhjMCAxLjM3OC0xLjEyMSAyLjUtMi41IDIuNXptLTEwLjUtMTB2Ny41YzAgLjgyNy42NzMgMS41IDEuNSAxLjVoOWMuODI3IDAgMS41LS42NzMgMS41LTEuNXYtNy41eiIvPjwvc3ZnPg==",
-            "module": "folder_to_print",
-            "module_name": "Printer",
-            "visible": true,
-            "options": false,
-            "father": "module",
-            "group": "scripts",
-            "linux": false,
-            "windows": true,
-            "mac": false,
-            "docker": false
-        },
-        {
-            "en": {
-                "title": "Get Printers",
-                "description": "Get all printer installed in the system"
-            },
             "es": {
                 "title": "Obtener impresoras",
-                "description": "Obtiene todas las impresoras instaladas en el sistema"
+                "description": "Obtiene todas las impresoras instaladas en el sistema."
+            },
+            "en": {
+                "title": "Get Printers",
+                "description": "Get all printer installed in the system."
+            },
+            "pr": {
+                "title": "Obter impressoras",
+                "description": "Obtenha todas as impressoras instaladas no sistema."
             },
             "form": {
                 "css": "modal-lg",
@@ -312,7 +52,8 @@
                         },
                         "description":{
                             "es": "Variable para obtener todas las impresoras en la misma.",
-                            "en": "Obtain all printers in a variable."
+                            "en": "Obtain all printers in a variable.",
+                            "pr": "Obtenha todas as impressoras em uma variável."
                         },
                         "remove_vars": true,
                         "id": "result",
@@ -323,6 +64,539 @@
             "video_youtube": "",
             "icon": " data:image/svg+xml;base64,PHN2ZyBpZD0iX3gzMV9fcHgiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iNTEyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Im0yMS41IDE4aC0zYy0uMjc2IDAtLjUtLjIyNC0uNS0uNXMuMjI0LS41LjUtLjVoM2MuODI3IDAgMS41LS42NzMgMS41LTEuNXYtN2MwLS44MjctLjY3My0xLjUtMS41LTEuNWgtMTljLS44MjcgMC0xLjUuNjczLTEuNSAxLjV2N2MwIC44MjcuNjczIDEuNSAxLjUgMS41aDNjLjI3NiAwIC41LjIyNC41LjVzLS4yMjQuNS0uNS41aC0zYy0xLjM3OSAwLTIuNS0xLjEyMi0yLjUtMi41di03YzAtMS4zNzggMS4xMjEtMi41IDIuNS0yLjVoMTljMS4zNzkgMCAyLjUgMS4xMjIgMi41IDIuNXY3YzAgMS4zNzgtMS4xMjEgMi41LTIuNSAyLjV6Ii8+PHBhdGggZD0ibTE0LjUgMjFoLTZjLS4yNzYgMC0uNS0uMjI0LS41LS41cy4yMjQtLjUuNS0uNWg2Yy4yNzYgMCAuNS4yMjQuNS41cy0uMjI0LjUtLjUuNXoiLz48cGF0aCBkPSJtMTQuNSAxOWgtNmMtLjI3NiAwLS41LS4yMjQtLjUtLjVzLjIyNC0uNS41LS41aDZjLjI3NiAwIC41LjIyNC41LjVzLS4yMjQuNS0uNS41eiIvPjxwYXRoIGQ9Im0xMC41IDE3aC0yYy0uMjc2IDAtLjUtLjIyNC0uNS0uNXMuMjI0LS41LjUtLjVoMmMuMjc2IDAgLjUuMjI0LjUuNXMtLjIyNC41LS41LjV6Ii8+PHBhdGggZD0ibTE4LjUgN2MtLjI3NiAwLS41LS4yMjQtLjUtLjV2LTRjMC0uODI3LS42NzMtMS41LTEuNS0xLjVoLTljLS44MjcgMC0xLjUuNjczLTEuNSAxLjV2NGMwIC4yNzYtLjIyNC41LS41LjVzLS41LS4yMjQtLjUtLjV2LTRjMC0xLjM3OCAxLjEyMS0yLjUgMi41LTIuNWg5YzEuMzc5IDAgMi41IDEuMTIyIDIuNSAyLjV2NGMwIC4yNzYtLjIyNC41LS41LjV6Ii8+PHBhdGggZD0ibTE2LjUgMjRoLTljLTEuMzc5IDAtMi41LTEuMTIyLTIuNS0yLjV2LThjMC0uMjc2LjIyNC0uNS41LS41aDEzYy4yNzYgMCAuNS4yMjQuNS41djhjMCAxLjM3OC0xLjEyMSAyLjUtMi41IDIuNXptLTEwLjUtMTB2Ny41YzAgLjgyNy42NzMgMS41IDEuNSAxLjVoOWMuODI3IDAgMS41LS42NzMgMS41LTEuNXYtNy41eiIvPjwvc3ZnPg==",
             "module": "get_printers",
+            "module_name": "Printer",
+            "visible": true,
+            "options": false,
+            "father": "module",
+            "group": "scripts",
+            "linux": false,
+            "windows": true,
+            "mac": false,
+            "docker": false
+        },
+        {
+            "es": {
+                "title": "Impresora por defecto",
+                "description": "Selecciona la impresora por defecto"
+            },
+            "en": {
+                "title": "Default printer",
+                "description": "Selects the default printer"
+            },
+            "pr": {
+                "title": "Impressora padrão",
+                "description": "Seleciona a impressora padrão"
+            },
+            "form": {
+                "css": "modal-lg",
+                "style": "width:1000px;",
+                "inputs": [
+                    {
+                        "type": "html",
+                        "title": {
+                            "es": "Seleccione la impresora",
+                            "en": "Select printer",
+                            "pr": "Selecione a impressora"
+                        },
+                        "src": "index.html",
+                        "id": "html",
+                        "css": "col-md-12",
+                        "style": "height:100px;",
+                        "description":{
+                            "es": "Seleccionador para la impresora por defecto que se desea.",
+                            "en": "Select the default printer you want.",
+                            "pr": "Selecione a impressora padrão desejada."
+                        }
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": "HP-XS211",
+                        "title": {
+                            "es": "Variable con la impresora deseada:",
+                            "en": "Variable with printer wanted:",
+                            "pr": "Variável com impressora desejada"
+                        },
+                        "description":{
+                            "es": "Usar este campo si no seleccionó impresora en el selector anterior.",
+                            "en": "Use this field if you do not select a printer in the previous selector.",
+                            "pr": "Use este campo se você não selecionar uma impressora no setor anterior."
+                        },
+                        "id": "printerWanted",
+                        "css": "col-md-6"
+                    }
+                ]
+            },
+            "video_youtube": "",
+            "icon": " data:image/svg+xml;base64,PHN2ZyBpZD0iX3gzMV9fcHgiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iNTEyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Im0yMS41IDE4aC0zYy0uMjc2IDAtLjUtLjIyNC0uNS0uNXMuMjI0LS41LjUtLjVoM2MuODI3IDAgMS41LS42NzMgMS41LTEuNXYtN2MwLS44MjctLjY3My0xLjUtMS41LTEuNWgtMTljLS44MjcgMC0xLjUuNjczLTEuNSAxLjV2N2MwIC44MjcuNjczIDEuNSAxLjUgMS41aDNjLjI3NiAwIC41LjIyNC41LjVzLS4yMjQuNS0uNS41aC0zYy0xLjM3OSAwLTIuNS0xLjEyMi0yLjUtMi41di03YzAtMS4zNzggMS4xMjEtMi41IDIuNS0yLjVoMTljMS4zNzkgMCAyLjUgMS4xMjIgMi41IDIuNXY3YzAgMS4zNzgtMS4xMjEgMi41LTIuNSAyLjV6Ii8+PHBhdGggZD0ibTE0LjUgMjFoLTZjLS4yNzYgMC0uNS0uMjI0LS41LS41cy4yMjQtLjUuNS0uNWg2Yy4yNzYgMCAuNS4yMjQuNS41cy0uMjI0LjUtLjUuNXoiLz48cGF0aCBkPSJtMTQuNSAxOWgtNmMtLjI3NiAwLS41LS4yMjQtLjUtLjVzLjIyNC0uNS41LS41aDZjLjI3NiAwIC41LjIyNC41LjVzLS4yMjQuNS0uNS41eiIvPjxwYXRoIGQ9Im0xMC41IDE3aC0yYy0uMjc2IDAtLjUtLjIyNC0uNS0uNXMuMjI0LS41LjUtLjVoMmMuMjc2IDAgLjUuMjI0LjUuNXMtLjIyNC41LS41LjV6Ii8+PHBhdGggZD0ibTE4LjUgN2MtLjI3NiAwLS41LS4yMjQtLjUtLjV2LTRjMC0uODI3LS42NzMtMS41LTEuNS0xLjVoLTljLS44MjcgMC0xLjUuNjczLTEuNSAxLjV2NGMwIC4yNzYtLjIyNC41LS41LjVzLS41LS4yMjQtLjUtLjV2LTRjMC0xLjM3OCAxLjEyMS0yLjUgMi41LTIuNWg5YzEuMzc5IDAgMi41IDEuMTIyIDIuNSAyLjV2NGMwIC4yNzYtLjIyNC41LS41LjV6Ii8+PHBhdGggZD0ibTE2LjUgMjRoLTljLTEuMzc5IDAtMi41LTEuMTIyLTIuNS0yLjV2LThjMC0uMjc2LjIyNC0uNS41LS41aDEzYy4yNzYgMCAuNS4yMjQuNS41djhjMCAxLjM3OC0xLjEyMSAyLjUtMi41IDIuNXptLTEwLjUtMTB2Ny41YzAgLjgyNy42NzMgMS41IDEuNSAxLjVoOWMuODI3IDAgMS41LS42NzMgMS41LTEuNXYtNy41eiIvPjwvc3ZnPg==",
+            "module": "default_printer",
+            "module_name": "Printer",
+            "visible": true,
+            "options": false,
+            "father": "module",
+            "group": "scripts",
+            "linux": false,
+            "windows": true,
+            "mac": false,
+            "docker": false
+        },
+        {
+            "es": {
+                "title": "Imprimir archivo",
+                "description": "Imprime un archivo"
+            },
+            "en": {
+                "title": "Print file",
+                "description": "Print a file"
+            },
+            "pr": {
+                "title": "Imprimir arquivo",
+                "description": "imprimir um arquivo"
+            },
+            "form": {
+                "css": "modal-lg",
+                "style": "width:1000px;",
+                "inputs": [
+                    {
+                        "type": "file_select",
+                        "placeholder": {
+                            "es": "C:/Users/User/Documents/file.pdf",
+                            "en": "C:/Users/User/Documents/file.pdf",
+                            "pr": "C:/Users/User/Documents/file.pdf"
+                        },
+                        "title": {
+                            "es": "Seleccionar un archivo:",
+                            "en": "Select a file:",
+                            "pr": "Selecione um arquivo:"
+                        },
+                        "help": {
+                            "es": "Ruta donde está el archivo",
+                            "en": "Path to file",
+                            "pr": "Caminho para arquivo"
+                        },
+                        "description":{
+                            "es": "Seleccione el archivo que se desea imprimir.",
+                            "en": "Select the file you want to print.",
+                            "pr": "Selecione o arquivo que deseja imprimir."
+                        },
+                        "id": "fileToPrint",
+                        "css": "col-md-12"
+                    },
+                    {
+                        "type": "checkbox",
+                        "placeholder": "False",
+                        "title": {
+                          "es": "Configurar impresión personalizada:",
+                          "en": "Set custom printing:",
+                          "pr": "Definir impressão personalizada:"
+                        },
+                        "description":{
+                            "es": "Tildar si se desea configurar la impresión.",
+                            "en": "Check if you want to configure printing.",
+                            "pr": "Verifique se deseja configurar a impressão."
+                        },
+                        "help":{
+                            "es": "Marcar para utilizar los campos siguientes. Dejar vacio para usar la impresora y configuración por defecto.",
+                            "en": "Check to use the following fields. Leave empty to use the default printer and settings.",
+                            "pr": "Marque para usar os seguintes campos. Deixe em branco para usar a impressora e as configurações padrão."
+                        },
+                        "id": "config",
+                        "css": "col-md-12"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": "HP-XS211",
+                        "title": {
+                            "es": "Impresora deseada (Opcional):",
+                            "en": "Printer wanted (Optional):",
+                            "pr": "Impressora desejada (opcional):"
+                        },
+                        "description":{
+                            "es": "Selecciona la impresora con la cual quiere imprimir.",
+                            "en": "Select the printer which you want to print with.",
+                            "pr": "Selecione a impressora com a qual deseja imprimir."
+                        },
+                        "help":{
+                            "es": "Dejar en blanco si se desea usar la impresora por defecto.",
+                            "en": "Leave empty if you want to use the default printer.",
+                            "pr": "Deixe em branco se quiser usar a impressora padrão."
+                        },
+                        "id": "printerWanted",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": "1",
+                        "title": {
+                            "es": "Cantidad de copias deseadas (Opcional):",
+                            "en": "Number of wanted copies (Optional):",
+                            "pr": "Número de cópias desejadas (opcional):"
+                        },
+                        "description":{
+                            "es": "Cantidad de copias.",
+                            "en": "Number of copies.",
+                            "pr": "Número de cópias."
+                        },
+                        "help":{
+                            "es": "Una copia es por defecto.",
+                            "en": "One copy is the default.",
+                            "pr": "Uma cópia é o padrão."
+                        },
+                        "id": "copies",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "select",
+                        "placeholder": "3",
+                        "title": {
+                            "es": "Calidad de impresión (Opcional):",
+                            "en": "Printer quality (Optional):",
+                            "pr": "Qualidade da impressora (opcional):"
+                        },
+                        "description":{
+                            "es": "",
+                            "en": "",
+                            "pr": ""
+                        },
+                        "options": [
+                            {
+                                "title": "---Select---",
+                                "value": ""
+                            },
+                            {
+                                "title": "Render in monochrome as 1bit/pixel",
+                                "value": " -mono"
+                            },
+                            {
+                                "title": "Render in greyscale as 8bits/pixel",
+                                "value": " -grey"
+                            },
+                            {
+                                "title": "Render in colour as 24bits/pixel",
+                                "value": " -color"
+                            }
+                        ],
+                        "id": "color",
+                        "css": "col-md-9"
+                    },
+                    {
+                        "type": "select",
+                        "placeholder": "3",
+                        "title": {
+                            "es": "Intervalo de paginas a imprimir (Opcional):",
+                            "en": "Range of pages to print (Optional):",
+                            "pr": "Intervalo de páginas para imprimir (opcional):"
+                        },
+                        "description":{
+                            "es": "Intervalo de paginas a imprimir. Puede elegir una opción default o setear un rango customizado.",
+                            "en": "Range of pages to print. You can choose a default option or set a custom range.",
+                            "pr": "Intervalo de páginas a imprimir. Você pode escolher uma opção padrão ou definir um intervalo personalizado."
+                        },
+                        "options": [
+                            {
+                                "title": "---Select---",
+                                "value": ""
+                            },
+                            {
+                                "title": "All",
+                                "value": " -all"
+                            },
+                            {
+                                "title": "Odd Pages",
+                                "value": " -odd"
+                            },
+                            {
+                                "title": "Even Pages",
+                                "value": " -even"
+                            },
+                            {
+                                "title": "Custom Range",
+                                "value": "custom"
+                            }
+                        ],
+                        "id": "pages",
+                        "css": "col-md-9"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": "3",
+                        "title": {
+                            "es": "Página de inicio (Opcional):",
+                            "en": "Starting page (Optional):",
+                            "pr": "Página inicial (opcional):"
+                        },
+                        "description":{
+                            "es": "Primera pagina a imprimir.",
+                            "en": "First page to print.",
+                            "pr": "Primeira página a imprimir."
+                        },
+                        "help":{
+                            "es": "Rellene el campo si se seleccionó Custom Range. Dejar vacio para imprimir desde el comienzo del documento.",
+                            "en": "Fill field if Custom Range was selected. Leave it empty to print from the beginning of the document.",
+                            "pr": "Preencha o campo se Intervalo Personalizado foi selecionado. Deixe em branco para imprimir desde o início do documento."
+                        },
+                        "id": "from_page",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": "5",
+                        "title": {
+                            "es": "Página final (Opcional):",
+                            "en": "Ending page (Optional):",
+                            "pr": "Página final (opcional):"
+                        },
+                        "description":{
+                            "es": "Ultima pagina a imprimir.",
+                            "en": "Last page to print.",
+                            "pr": "Última página a imprimir."
+                        },
+                        "help":{
+                            "es": "Rellene el campo si se seleccionó Custom Range. Dejar vacio para imprimir hasta el final del documento.",
+                            "en": "Fill field of Custom Range was selected. Leave it empty to print until the end of the document.",
+                            "pr": "O campo de preenchimento do intervalo personalizado foi selecionado. Deixe em branco para imprimir até o final do documento."
+                        },
+                        "id": "to_page",
+                        "css": "col-md-6"
+                    }
+                ]
+            },
+            "video_youtube": "",
+            "icon": " data:image/svg+xml;base64,PHN2ZyBpZD0iX3gzMV9fcHgiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iNTEyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Im0yMS41IDE4aC0zYy0uMjc2IDAtLjUtLjIyNC0uNS0uNXMuMjI0LS41LjUtLjVoM2MuODI3IDAgMS41LS42NzMgMS41LTEuNXYtN2MwLS44MjctLjY3My0xLjUtMS41LTEuNWgtMTljLS44MjcgMC0xLjUuNjczLTEuNSAxLjV2N2MwIC44MjcuNjczIDEuNSAxLjUgMS41aDNjLjI3NiAwIC41LjIyNC41LjVzLS4yMjQuNS0uNS41aC0zYy0xLjM3OSAwLTIuNS0xLjEyMi0yLjUtMi41di03YzAtMS4zNzggMS4xMjEtMi41IDIuNS0yLjVoMTljMS4zNzkgMCAyLjUgMS4xMjIgMi41IDIuNXY3YzAgMS4zNzgtMS4xMjEgMi41LTIuNSAyLjV6Ii8+PHBhdGggZD0ibTE0LjUgMjFoLTZjLS4yNzYgMC0uNS0uMjI0LS41LS41cy4yMjQtLjUuNS0uNWg2Yy4yNzYgMCAuNS4yMjQuNS41cy0uMjI0LjUtLjUuNXoiLz48cGF0aCBkPSJtMTQuNSAxOWgtNmMtLjI3NiAwLS41LS4yMjQtLjUtLjVzLjIyNC0uNS41LS41aDZjLjI3NiAwIC41LjIyNC41LjVzLS4yMjQuNS0uNS41eiIvPjxwYXRoIGQ9Im0xMC41IDE3aC0yYy0uMjc2IDAtLjUtLjIyNC0uNS0uNXMuMjI0LS41LjUtLjVoMmMuMjc2IDAgLjUuMjI0LjUuNXMtLjIyNC41LS41LjV6Ii8+PHBhdGggZD0ibTE4LjUgN2MtLjI3NiAwLS41LS4yMjQtLjUtLjV2LTRjMC0uODI3LS42NzMtMS41LTEuNS0xLjVoLTljLS44MjcgMC0xLjUuNjczLTEuNSAxLjV2NGMwIC4yNzYtLjIyNC41LS41LjVzLS41LS4yMjQtLjUtLjV2LTRjMC0xLjM3OCAxLjEyMS0yLjUgMi41LTIuNWg5YzEuMzc5IDAgMi41IDEuMTIyIDIuNSAyLjV2NGMwIC4yNzYtLjIyNC41LS41LjV6Ii8+PHBhdGggZD0ibTE2LjUgMjRoLTljLTEuMzc5IDAtMi41LTEuMTIyLTIuNS0yLjV2LThjMC0uMjc2LjIyNC0uNS41LS41aDEzYy4yNzYgMCAuNS4yMjQuNS41djhjMCAxLjM3OC0xLjEyMSAyLjUtMi41IDIuNXptLTEwLjUtMTB2Ny41YzAgLjgyNy42NzMgMS41IDEuNSAxLjVoOWMuODI3IDAgMS41LS42NzMgMS41LTEuNXYtNy41eiIvPjwvc3ZnPg==",
+            "module": "print_file",
+            "module_name": "Printer",
+            "visible": true,
+            "options": false,
+            "father": "module",
+            "group": "scripts",
+            "linux": false,
+            "windows": true,
+            "mac": false,
+            "docker": false
+        },
+        {
+            "es": {
+                "title": "Imprimir archivos de una carpeta",
+                "description": "Imprime archivos que estan en una carpeta"
+            },
+            "en": {
+                "title": "Print files in folder",
+                "description": "Prints files from a folder"
+            },
+            "pr": {
+                "title": "Imprimir arquivos na pasta",
+                "description": "Imprime arquivos de uma pasta"
+            },
+            "form": {
+                "css": "modal-lg",
+                "style": "width:1000px;",
+                "inputs": [
+                    {
+                        "type": "folder_select",
+                        "placeholder": {
+                            "es": "C:/Users/User/Documents",
+                            "en": "C:/Users/User/Documents",
+                            "pr": "C:/Users/User/Documents"                
+                        },
+                        "title": {
+                            "es": "Seleccionar una carpeta:",
+                            "en": "Select a Folder:",
+                            "pr": "Selecione uma pasta:"
+                        },
+                        "help": {
+                            "es": "Ruta a la carpeta",
+                            "en": "Path to folder",
+                            "pr": "Caminho para a pasta"
+                        },
+                        "description":{
+                            "es": "Ruta de la carpeta que contiene los archivos a imprimir.",
+                            "en": "Path to folder that contains the files you want to print.",
+                            "pr": "Caminho para a pasta que contém os arquivos que você deseja imprimir."
+                        },
+                        "id": "folderToPrint",
+                        "css": "col-md-12"
+                    },
+                    {
+                        "type": "checkbox",
+                        "placeholder": "False",
+                        "title": {
+                          "es": "Configurar impresión personalizada:",
+                          "en": "Set custom printing:",
+                          "pr": "Definir impressão personalizada:"
+                        },
+                        "description":{
+                            "es": "Tildar si se desea configurar la impresión.",
+                            "en": "Check if you want to configure printing.",
+                            "pr": "Verifique se deseja configurar a impressão."
+                        },
+                        "help":{
+                            "es": "Marcar para utilizar los campos siguientes. Dejar vacio para usar la impresora y configuración por defecto.",
+                            "en": "Check to use the following fields. Leave empty to use the default printer and settings.",
+                            "pr": "Marque para usar os seguintes campos. Deixe em branco para usar a impressora e as configurações padrão."
+                        },
+                        "id": "config",
+                        "css": "col-md-12"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": "HP-XS211",
+                        "title": {
+                            "es": "Impresora deseada (Opcional):",
+                            "en": "Printer wanted (Optional):",
+                            "pr": "Impressora desejada (opcional):"
+                        },
+                        "description":{
+                            "es": "Selecciona la impresora con la cual quiere imprimir.",
+                            "en": "Select the printer which you want to print with.",
+                            "pr": "Selecione a impressora com a qual deseja imprimir."
+                        },
+                        "help":{
+                            "es": "Dejar en blanco si se desea usar la impresora por defecto.",
+                            "en": "Leave empty if you want to use the default printer.",
+                            "pr": "Deixe em branco se quiser usar a impressora padrão."
+                        },
+                        "id": "printerWanted",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": "1",
+                        "title": {
+                            "es": "Cantidad de copias deseadas (Opcional):",
+                            "en": "Number of wanted copies (Optional):",
+                            "pr": "Número de cópias desejadas (opcional):"
+                        },
+                        "description":{
+                            "es": "Cantidad de copias.",
+                            "en": "Number of copies.",
+                            "pr": "Número de cópias."
+                        },
+                        "help":{
+                            "es": "Una copia es por defecto.",
+                            "en": "One copy is the default.",
+                            "pr": "Uma cópia é o padrão."
+                        },
+                        "id": "copies",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "select",
+                        "placeholder": "3",
+                        "title": {
+                            "es": "Calidad de impresión (Opcional):",
+                            "en": "Printer quality (Optional):",
+                            "pr": "Qualidade da impressora (opcional):"
+                        },
+                        "description":{
+                            "es": "",
+                            "en": "",
+                            "pr": ""
+                        },
+                        "options": [
+                            {
+                                "title": "---Select---",
+                                "value": ""
+                            },
+                            {
+                                "title": "Render in monochrome as 1bit/pixel",
+                                "value": " -mono"
+                            },
+                            {
+                                "title": "Render in greyscale as 8bits/pixel",
+                                "value": " -grey"
+                            },
+                            {
+                                "title": "Render in colour as 24bits/pixel",
+                                "value": " -color"
+                            }
+                        ],
+                        "id": "color",
+                        "css": "col-md-9"
+                    },
+                    {
+                        "type": "select",
+                        "placeholder": "3",
+                        "title": {
+                            "es": "Intervalo de paginas a imprimir (Opcional):",
+                            "en": "Range of pages to print (Optional):",
+                            "pr": "Intervalo de páginas para imprimir (opcional):"
+                        },
+                        "description":{
+                            "es": "Intervalo de paginas a imprimir. Puede elegir una opción default o setear un rango customizado.",
+                            "en": "Range of pages to print. You can choose a default option or set a custom range.",
+                            "pr": "Intervalo de páginas a imprimir. Você pode escolher uma opção padrão ou definir um intervalo personalizado."
+                        },
+                        "options": [
+                            {
+                                "title": "---Select---",
+                                "value": ""
+                            },
+                            {
+                                "title": "All",
+                                "value": " -all"
+                            },
+                            {
+                                "title": "Odd Pages",
+                                "value": " -odd"
+                            },
+                            {
+                                "title": "Even Pages",
+                                "value": " -even"
+                            },
+                            {
+                                "title": "Custom Range",
+                                "value": "custom"
+                            }
+                        ],
+                        "id": "pages",
+                        "css": "col-md-9"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": "3",
+                        "title": {
+                            "es": "Página de inicio (Opcional):",
+                            "en": "Starting page (Optional):",
+                            "pr": "Página inicial (opcional):"
+                        },
+                        "description":{
+                            "es": "Primera pagina a imprimir.",
+                            "en": "First page to print.",
+                            "pr": "Primeira página a imprimir."
+                        },
+                        "help":{
+                            "es": "Rellene el campo si se seleccionó Custom Range. Dejar vacio para imprimir desde el comienzo del documento.",
+                            "en": "Fill field if Custom Range was selected. Leave it empty to print from the beginning of the document.",
+                            "pr": "Preencha o campo se Intervalo Personalizado foi selecionado. Deixe em branco para imprimir desde o início do documento."
+                        },
+                        "id": "from_page",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": "5",
+                        "title": {
+                            "es": "Página final (Opcional):",
+                            "en": "Ending page (Optional):",
+                            "pr": "Página final (opcional):"
+                        },
+                        "description":{
+                            "es": "Ultima pagina a imprimir.",
+                            "en": "Last page to print.",
+                            "pr": "Última página a imprimir."
+                        },
+                        "help":{
+                            "es": "Rellene el campo si se seleccionó Custom Range. Dejar vacio para imprimir hasta el final del documento.",
+                            "en": "Fill field of Custom Range was selected. Leave it empty to print until the end of the document.",
+                            "pr": "O campo de preenchimento do intervalo personalizado foi selecionado. Deixe em branco para imprimir até o final do documento."
+                        },
+                        "id": "to_page",
+                        "css": "col-md-6"
+                    }
+                ]
+            },
+            "video_youtube": "",
+            "icon": " data:image/svg+xml;base64,PHN2ZyBpZD0iX3gzMV9fcHgiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iNTEyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Im0yMS41IDE4aC0zYy0uMjc2IDAtLjUtLjIyNC0uNS0uNXMuMjI0LS41LjUtLjVoM2MuODI3IDAgMS41LS42NzMgMS41LTEuNXYtN2MwLS44MjctLjY3My0xLjUtMS41LTEuNWgtMTljLS44MjcgMC0xLjUuNjczLTEuNSAxLjV2N2MwIC44MjcuNjczIDEuNSAxLjUgMS41aDNjLjI3NiAwIC41LjIyNC41LjVzLS4yMjQuNS0uNS41aC0zYy0xLjM3OSAwLTIuNS0xLjEyMi0yLjUtMi41di03YzAtMS4zNzggMS4xMjEtMi41IDIuNS0yLjVoMTljMS4zNzkgMCAyLjUgMS4xMjIgMi41IDIuNXY3YzAgMS4zNzgtMS4xMjEgMi41LTIuNSAyLjV6Ii8+PHBhdGggZD0ibTE0LjUgMjFoLTZjLS4yNzYgMC0uNS0uMjI0LS41LS41cy4yMjQtLjUuNS0uNWg2Yy4yNzYgMCAuNS4yMjQuNS41cy0uMjI0LjUtLjUuNXoiLz48cGF0aCBkPSJtMTQuNSAxOWgtNmMtLjI3NiAwLS41LS4yMjQtLjUtLjVzLjIyNC0uNS41LS41aDZjLjI3NiAwIC41LjIyNC41LjVzLS4yMjQuNS0uNS41eiIvPjxwYXRoIGQ9Im0xMC41IDE3aC0yYy0uMjc2IDAtLjUtLjIyNC0uNS0uNXMuMjI0LS41LjUtLjVoMmMuMjc2IDAgLjUuMjI0LjUuNXMtLjIyNC41LS41LjV6Ii8+PHBhdGggZD0ibTE4LjUgN2MtLjI3NiAwLS41LS4yMjQtLjUtLjV2LTRjMC0uODI3LS42NzMtMS41LTEuNS0xLjVoLTljLS44MjcgMC0xLjUuNjczLTEuNSAxLjV2NGMwIC4yNzYtLjIyNC41LS41LjVzLS41LS4yMjQtLjUtLjV2LTRjMC0xLjM3OCAxLjEyMS0yLjUgMi41LTIuNWg5YzEuMzc5IDAgMi41IDEuMTIyIDIuNSAyLjV2NGMwIC4yNzYtLjIyNC41LS41LjV6Ii8+PHBhdGggZD0ibTE2LjUgMjRoLTljLTEuMzc5IDAtMi41LTEuMTIyLTIuNS0yLjV2LThjMC0uMjc2LjIyNC0uNS41LS41aDEzYy4yNzYgMCAuNS4yMjQuNS41djhjMCAxLjM3OC0xLjEyMSAyLjUtMi41IDIuNXptLTEwLjUtMTB2Ny41YzAgLjgyNy42NzMgMS41IDEuNSAxLjVoOWMuODI3IDAgMS41LS42NzMgMS41LTEuNXYtNy41eiIvPjwvc3ZnPg==",
+            "module": "folder_to_print",
             "module_name": "Printer",
             "visible": true,
             "options": false,
