@@ -1,10 +1,6 @@
-
-
-
-
 # Printer
   
-Module for printers.  
+Module for printers. 
 
 ## How to install this module
   
@@ -12,28 +8,26 @@ __Download__ and __install__ the content in 'modules' folder in Rocketbot path
 
 
 ## How to use this module
-In order to use this module, you have to select a printer, then a file or folder that contains
- all files you want to print.
+
+In order to use this module, you have to select a default printer, then a file or folder that contains all the files you want to print.
 
 
 ## Overview
 
 
-1. Default printer  
+1. Get Printers  
+Get all printer installed in the system.
+
+2. Default printer  
 Selects the default printer
 
-2. Print file  
-Prints a file from a selected printer or from the default printer.
+3. Print file  
+Print a file
 
-3. Print files in folder  
-Prints files contain in a folder
+4. Print files in folder  
+Prints files from a folder  
 
-4. Get Printers  
-Get all printer installed in the system  
 
-## Updates
-### 29-Dic-2021
-- Add option to print from any printer.
 
 
 ----
